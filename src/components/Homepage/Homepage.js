@@ -1,7 +1,12 @@
-function Homepage() {
+import Form from '../Form/Form.js'
+
+const Homepage = () => {
 
   return (
-    <h1> This is a test! Hewwo World! </h1>
+    <div>
+      <h1>Grateful Together</h1>
+      <Form />
+    </div>
   )
 } 
 
