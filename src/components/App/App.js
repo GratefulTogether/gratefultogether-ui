@@ -1,10 +1,10 @@
 import './App.css';
 import Homepage from '../Homepage/Homepage'
+import Datepage from '../Datepage/Datepage'
+import NotFound from '../NotFound/NotFound'
 import React from 'react'
 import { Routes, Route} from 'react-router-dom'
-import { useEffect, useState } from 'react';
-
-//comment
+// import { useEffect, useState } from 'react';
 
 function App() {
   return (
