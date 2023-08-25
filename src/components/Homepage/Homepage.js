@@ -1,11 +1,12 @@
 import Form from '../Form/Form.js'
 import './Homepage.css'
+import logo from '../../images/GratefulTogetherLogo.png'
 
 const Homepage = () => {
 
   return (
     <div className='Homepage'>
-      <h1>Grateful Together</h1>
+      <img src={logo} alt='Grateful Together Logo' className='logo'></img>
       <Form />
     </div>
   )
