@@ -6,4 +6,4 @@ workflows:
   build: test_my_app
     jobs:
       - cypress/run:
-          command: npx cypress run --browser chrome
+          command: npx cypress run --browser electron
