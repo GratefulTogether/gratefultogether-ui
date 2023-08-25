@@ -10,9 +10,9 @@ function App() {
   return (
     <Routes>
       <Route exact path='/' element={<Homepage />} />
-      {/* <Route path='date/:date' element={<Datepage/>} />
+      <Route path='date/:date' element={<Datepage/>} />
       <Route path='*' element={<NotFound />}/>
-      <Route path='error' element={<NotFound/>}/> */}
+      <Route path='error' element={<NotFound/>}/>
     </Routes>
   );
 }
