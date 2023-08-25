@@ -3,7 +3,7 @@ orbs:
 
   cypress: cypress-io/cypress@1
 workflows:
-  build: test_my_app
+  build:
     jobs:
       - cypress/run:
           command: npx cypress run --browser electron
