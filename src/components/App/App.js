@@ -1,18 +1,18 @@
 import './App.css';
 import Homepage from '../Homepage/Homepage'
+import Datepage from '../Datepage/Datepage'
+import NotFound from '../NotFound/NotFound'
 import React from 'react'
 import { Routes, Route} from 'react-router-dom'
-import { useEffect, useState } from 'react';
-
-//comment
+// import { useEffect, useState } from 'react';
 
 function App() {
   return (
     <Routes>
       <Route exact path='/' element={<Homepage />} />
-      <Route path='date/:date' element={<Datepage/>} />
+      {/* <Route path='date/:date' element={<Datepage/>} />
       <Route path='*' element={<NotFound />}/>
-      <Route path='error' element={<NotFound/>}/>
+      <Route path='error' element={<NotFound/>}/> */}
     </Routes>
   );
 }
