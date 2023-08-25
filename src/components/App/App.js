@@ -10,7 +10,7 @@ import { Routes, Route} from 'react-router-dom'
 
 const App = () => {
   return (
-    <div>
+    <div className='App'>
       <Nav />
       <Routes>
         <Route exact path='/' element={<Homepage />} />

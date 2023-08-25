@@ -1,0 +1,10 @@
+.Homepage {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: auto;
+  width: 300px;
+  align-self: center;
+}

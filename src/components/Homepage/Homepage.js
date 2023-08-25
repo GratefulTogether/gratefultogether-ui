@@ -1,7 +1,14 @@
-function Homepage() {
+import Form from '../Form/Form.js'
+import './Homepage.css'
+import logo from '../../images/GratefulTogetherLogo.png'
+
+const Homepage = () => {
 
   return (
-    <h1> This is a test! Hewwo World! </h1>
+    <div className='Homepage'>
+      <img src={logo} alt='Grateful Together Logo' className='logo'></img>
+      <Form />
+    </div>
   )
 } 
 
