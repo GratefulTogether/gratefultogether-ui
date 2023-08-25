@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Home'
+import Homepage from '../Homepage/Homepage'
 import React from 'react'
 import { Routes, Route} from 'react-router-dom'
 import { useEffect, useState } from 'react';
@@ -7,7 +7,10 @@ import { useEffect, useState } from 'react';
 function App() {
   return (
     <Routes>
-      <Route exact path='/' element={<Home />} />
+      <Route exact path='/' element={<Homepage />} />
+      <Route path='date/:date' element={<Datepage/>} />
+      <Route path='*' element={<NotFound />}/>
+      <Route path='error' element={<NotFound/>}/>
     </Routes>
   );
 }
