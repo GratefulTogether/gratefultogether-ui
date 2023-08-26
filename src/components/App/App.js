@@ -17,7 +17,7 @@ const [wins, setWins] = useState(cardData)
   return (
     <div>
       <Nav />
-      <EntriesContainer wins = {wins} setWins={setWins}/>
+      <EntriesContainer wins = {wins} setWins = {setWins}/>
       <Routes>
         <Route exact path='/' element={<Homepage />} />
         <Route path='date/:date' element={<Datepage/>} />
