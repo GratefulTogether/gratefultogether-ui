@@ -10,7 +10,7 @@ const Card = styled.div`
   width: 40vw;
   transition: 1s;
   &:hover {
-    transform: scale(1.9);
+    transform: scale(1.4);
     margin: 4.5%
   }
 

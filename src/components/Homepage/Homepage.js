@@ -12,7 +12,7 @@ const Homepage = ({wins, setWins}) => {
   
   const Logo = styled.img `
     height: auto;
-    width: 300px;
+    width: 400px;
     align-self: center;
   `
 

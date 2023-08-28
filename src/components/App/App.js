@@ -20,8 +20,7 @@ const [wins, setWins] = useState(cardData)
         <Route path='date/:date' element={<Datepage/>} />
         <Route path='*' element={<NotFound />}/>
         <Route path='error' element={<NotFound/>}/>
-      </Routes>
-      
+      </Routes> 
     </div>
   );
 }
