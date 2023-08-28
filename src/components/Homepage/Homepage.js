@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
 import Nav from "../NavBar/NavBar.js";
 
-const Homepage = ({wins, setWins}) => {
+const Homepage = ({wins, setWins, date, setDate}) => {
 
   const HomepageContainer = styled.div `
     display: flex;
@@ -24,7 +24,7 @@ const Homepage = ({wins, setWins}) => {
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-      <EntriesContainer wins = {wins} setWins = {setWins}/>
+      <EntriesContainer wins = {wins} setWins = {setWins} date={date} setDate={setDate}/>
     </HomepageContainer>
     </>
   )

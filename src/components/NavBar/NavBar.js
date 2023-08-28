@@ -12,7 +12,7 @@
 
     return (
         <NavBar>
-            <p className='welcome-user'>Welcome User!</p>
+            {/* <p className='welcome-user'>Welcome User!</p> */}
         </NavBar>
     )
 }

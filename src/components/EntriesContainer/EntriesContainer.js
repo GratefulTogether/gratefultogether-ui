@@ -6,7 +6,7 @@ import CalendarModal from '../CalendarModal/CalendarModal';
 import { useState } from 'react';
 
 
-const EntriesContainer = ({wins}) => {
+const EntriesContainer = ({wins, date, setDate}) => {
 
   const CardContainer = styled.div`
     display:flex;
@@ -34,7 +34,7 @@ const EntriesContainer = ({wins}) => {
 
   const renderModal = () => {
 		return (
-			<CalendarModal closeModal={closeModal} />
+			<CalendarModal closeModal={closeModal} date = {date} setDate ={setDate}/>
 		)
 	}
 
@@ -49,7 +49,7 @@ const EntriesContainer = ({wins}) => {
   return (
     <div className='today-info-container'>
       <div className='today-info'>
-        <h2>Today's Entries:</h2>
+        {date && <h2>Today's Entries:</h2>}
         <button onClick={handleClick}>View Past Entry</button>
         {isModalOpen && renderModal()}
       </div>
