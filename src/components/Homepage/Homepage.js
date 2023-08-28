@@ -1,8 +1,9 @@
 import Form from '../Form/Form.js'
 import logo from '../../images/GratefulTogetherLogo.png'
 import styled from 'styled-components';
+import EntriesContainer from "../EntriesContainer/EntriesContainer"
 
-const Homepage = () => {
+const Homepage = ({wins, setWins}) => {
 
   const HomepageContainer = styled.div `
     display: flex;
@@ -20,6 +21,7 @@ const Homepage = () => {
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
+      <EntriesContainer wins = {wins} setWins = {setWins}/>
     </HomepageContainer>
   )
 } 

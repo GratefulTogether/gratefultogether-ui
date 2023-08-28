@@ -10,8 +10,10 @@ const Card = styled.div`
   width: 40vw;
   transition: 1s;
   &:hover {
-    transform: scale(1.1)
+    transform: scale(1.9);
+    margin: 4.5%
   }
+
 `;
 
 const TitleOfCard = styled.div`

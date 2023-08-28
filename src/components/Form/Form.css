@@ -1,0 +1,6 @@
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-self: center;
+}

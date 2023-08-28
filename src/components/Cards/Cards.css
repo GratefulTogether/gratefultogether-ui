@@ -1,0 +1,20 @@
+/* .cards {
+  box-sizing: border-box;
+  border: 3px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  width: 40vw;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.win {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+} */
