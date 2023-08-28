@@ -1,14 +1,28 @@
 import Form from '../Form/Form.js'
-import './Homepage.css'
 import logo from '../../images/GratefulTogetherLogo.png'
+import styled from 'styled-components';
+import EntriesContainer from "../EntriesContainer/EntriesContainer"
 
-const Homepage = () => {
+const Homepage = ({wins, setWins}) => {
+
+  const HomepageContainer = styled.div `
+    display: flex;
+    flex-direction: column;
+  `
+  
+  const Logo = styled.img `
+    height: auto;
+    width: 300px;
+    align-self: center;
+  `
+
 
   return (
-    <div className='Homepage'>
-      <img src={logo} alt='Grateful Together Logo' className='logo'></img>
+    <HomepageContainer>
+      <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-    </div>
+      <EntriesContainer wins = {wins} setWins = {setWins}/>
+    </HomepageContainer>
   )
 } 
 

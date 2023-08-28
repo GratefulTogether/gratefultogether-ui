@@ -1,15 +1,27 @@
- import './NavBar.css'
+ import styled from 'styled-components';
  
  const Nav = () => {
 
+    const NavBar = styled.nav`
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+    `
+
+    const Calendar = styled.div`
+        display: flex;
+    `
+
+
     return (
-        <nav className='navbar'>
+        <NavBar>
             <p className='welcome-user'>Welcome User!</p>
-            <div className='calendar'>
+            <Calendar>
                 <p>View entries for a different date: </p>
                 <input type='date'/>
-            </div>
-        </nav>
+            </Calendar>
+        </NavBar>
     )
 }
 
