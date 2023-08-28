@@ -1,7 +1,6 @@
 import Homepage from '../Homepage/Homepage'
 import Datepage from '../Datepage/Datepage'
 import NotFound from '../NotFound/NotFound'
-import Nav from "../NavBar/NavBar.js";
 import cardData from '../../cardMockData';
 import './App.css'
 import { useState } from 'react';
@@ -14,7 +13,6 @@ const [wins, setWins] = useState(cardData)
 
   return (
     <div className='App'>
-      <Nav />
       <Routes>
         <Route exact path='/' element={<Homepage wins = {wins} setWins = {setWins} />} />
         <Route path='date/:date' element={<Datepage/>} />
