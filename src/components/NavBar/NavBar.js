@@ -9,18 +9,10 @@
         padding: 0px 20px;
     `
 
-    const Calendar = styled.div`
-        display: flex;
-    `
-
 
     return (
         <NavBar>
             <p className='welcome-user'>Welcome User!</p>
-            <Calendar>
-                <p>View entries for a different date: </p>
-                <input type='date'/>
-            </Calendar>
         </NavBar>
     )
 }
