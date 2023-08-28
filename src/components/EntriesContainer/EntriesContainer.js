@@ -1,7 +1,7 @@
 import React from 'react'
 import Cards from '../Cards/Cards'
 import styled from 'styled-components';
-
+import './EntriesContainer.css'
 
 
 const EntriesContainer = ({wins}) => {
@@ -29,9 +29,15 @@ const EntriesContainer = ({wins}) => {
   });
 
   return (
-    <EContainer>
-      {singleWin} 
-    </EContainer>
+    <div className='today-info-container'>
+      <div className='today-info'>
+        <h2>Today's Entries:</h2>
+        <button>View Past Entries</button>
+      </div>
+      <EContainer>
+        {wins.data.length ? singleWin : <p>Nothing recorded yet today!</p>} 
+      </EContainer>
+    </div>
   );
 }
 
