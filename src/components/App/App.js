@@ -1,4 +1,3 @@
-import './App.css';
 import Homepage from '../Homepage/Homepage'
 import Datepage from '../Datepage/Datepage'
 import NotFound from '../NotFound/NotFound'
@@ -17,13 +16,13 @@ const [wins, setWins] = useState(cardData)
   return (
     <div className='App'>
       <Nav />
-      <EntriesContainer wins = {wins} setWins = {setWins}/>
       <Routes>
         <Route exact path='/' element={<Homepage />} />
         <Route path='date/:date' element={<Datepage/>} />
         <Route path='*' element={<NotFound />}/>
         <Route path='error' element={<NotFound/>}/>
       </Routes>
+      <EntriesContainer wins = {wins} setWins = {setWins}/>
     </div>
   );
 }
