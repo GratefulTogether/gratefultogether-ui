@@ -12,6 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button:hover {
+  cursor: pointer;
+}
 /* 
 --text: #0e0609; grey
 --background: #f6ebee; light pink
