@@ -3,7 +3,7 @@ import Datepage from '../Datepage/Datepage'
 import NotFound from '../NotFound/NotFound'
 import Nav from "../NavBar/NavBar.js";
 import cardData from '../../cardMockData';
-import React from 'react'
+import './App.css'
 import { useState } from 'react';
 import { Routes, Route} from 'react-router-dom'
 // import { useEffect, useState } from 'react';
