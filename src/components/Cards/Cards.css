@@ -6,8 +6,9 @@
   flex-direction: column;
   height: 20vh;
   width: 40vw;
-}
-
+  background-image: url();
+} */
+/* 
 .title {
   display: flex;
   justify-content: space-between;
