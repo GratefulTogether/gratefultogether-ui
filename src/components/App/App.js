@@ -3,14 +3,34 @@ import Datepage from '../Datepage/Datepage'
 import NotFound from '../NotFound/NotFound'
 import cardData from '../../cardMockData';
 import './App.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route} from 'react-router-dom'
-// import { useEffect, useState } from 'react';
+import { createConsumer } from '@rails/actioncable';
+
 
 
 const App = () => {
 const [wins, setWins] = useState(cardData)
 const [date, setDate] = useState('8/31/2023')
+
+useEffect(() => {
+  const cable = createConsumer('ws://localhost:5000/cable');
+
+  const subscription = cable.subscriptions.create({
+    channel: 'WinsChannel',
+    // username: 'cool_kid_20',
+  }, {
+    connected: () => console.log('connected'),
+    disconnected: () => console.log('disconnected'),
+    received: (data) => console.log(data),
+  });
+
+  return () => {
+    cable.disconnect();
+    subscription.unsubscribe();
+  };
+
+},[])
 
   return (
     <div className='App'>
