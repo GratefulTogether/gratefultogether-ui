@@ -4,11 +4,14 @@ import dayjs from 'dayjs'
 import './CalendarModal.css'
 
 const CalendarModal = ({ closeModal, date, setDate }) => {
-
+// const [dateError, setDateError] = useState(false)
 
   const today = dayjs();
   const formattedDate = today.format('YYYY-MM-DD');
 
+  const clearCalendar = () => {
+    setDate(null)
+  }
 
   return (
     <div className="modal">
@@ -17,7 +20,7 @@ const CalendarModal = ({ closeModal, date, setDate }) => {
         <h3>Select your date: </h3>
         <input type='date' className='date'  onChange={e => setDate(e.target.value)} max={formattedDate}/>
         <Link to='/date'>
-        <button type='submit'>Submit</button>
+        <button type='submit' disabled={!date} onClick={clearCalendar}>Submit</button>
       </Link>
       </div>
     </div>
