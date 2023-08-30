@@ -51,8 +51,6 @@ const WinOfCard = styled.div`
 
 const Cards = ({name, entry, date, className}) => {
 
-  console.log(className)
-
   return (
     <Card className={className}>
       <TitleOfCard>
