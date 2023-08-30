@@ -37,12 +37,16 @@ const Submit = styled.button`
 const Form = () => {
 
   const [message, setMessage] = useState("")
+  const [errMessage, setErrMessage] = useState(false)
 
   const today = dayjs();
   const formattedDate = today.format('MMMM D, YYYY');
 
     const handleSubmit = (e) => {
       e.preventDefault()
+      if (!message) {
+        setErrMessage(true)
+      } else {
       fetch('http://localhost:3000/api/v1/wins', {
         method: 'POST',
         body: JSON.stringify({user_id: 1, message}),
@@ -56,8 +60,12 @@ const Form = () => {
           throw new Error('ERRORROROROR')
         }
       })
-      .then(res => {setMessage('')})
+      .then(res => {
+        setErrMessage(false)
+        setMessage('')
+      })
       .catch(err => console.log(err))
+     }
     }
 
     const updateMessage = (e) => {
@@ -65,11 +73,14 @@ const Form = () => {
     }
 
   return (
+      <div>
     <TheForm>
       {formattedDate}
       <TextInput value={message} type='text' placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
       <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
     </TheForm>
+      {errMessage && <p>EOORRROR</p>}
+      </div>
   )
 }
 
