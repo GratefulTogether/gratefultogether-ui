@@ -8,12 +8,18 @@ import tanSquare from '../../images/notecards/orange1.png';
 import yellowSq from '../../images/notecards/orange2.png';
 import yellow from '../../images/notecards/yellow.png';
 
-const notecards = [green, lightGreen, purple, tanCircle, tanSquare, yellow, yellowSq]
-const randomIndex = Math.floor(Math.random() * notecards.length)
-let currentBackground = notecards[randomIndex]
+const imageMapping = {
+  purple: purple,
+  green: green,
+  lightGreen: lightGreen,
+  tanCircle: tanCircle,
+  tanSquare: tanSquare,
+  yellow: yellow,
+  yellowSq: yellowSq,
+};
 
 const Card = styled.div`
-  background: url(${currentBackground});
+  
   padding: 10px;  
   height: 30vh;
   width: 26vw;
@@ -26,6 +32,7 @@ const Card = styled.div`
     transform: scale(1.4);
     margin: 5.5%
   }
+  background: url(${props => imageMapping[props.className] || 'default?'})
 `;
 
 const TitleOfCard = styled.div`
@@ -42,9 +49,12 @@ const WinOfCard = styled.div`
   font-family: 'Homemade Apple', cursive;
 `;
 
-const Cards = ({name, entry, date}) => {
+const Cards = ({name, entry, date, className}) => {
+
+  console.log(className)
+
   return (
-    <Card>
+    <Card className={className}>
       <TitleOfCard>
         <h3>Date: {date} </h3>
         <h3>Name: {name} </h3>

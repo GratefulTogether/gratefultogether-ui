@@ -7,6 +7,12 @@ import { useState } from 'react';
 
 
 const EntriesContainer = ({wins, date, setDate}) => {
+  
+  const notecards = ['green', 'lightGreen', 'purple', 'tanCircle', 'tanSquare', 'yellow', 'yellowSq'];
+
+  let randomClass = () => {
+    return notecards[Math.floor(Math.random() * notecards.length)];
+  };
 
   const CardContainer = styled.div`
     display:flex;
@@ -41,7 +47,7 @@ const EntriesContainer = ({wins, date, setDate}) => {
   const singleWin = wins.data.map(win => {
     return (
       <CardContainer key={win.id}> 
-        <Cards name={win.attributes.user_name} entry={win.attributes.entry} date={win.attributes.created_at}/>
+        <Cards className={`${randomClass()}`} name={win.attributes.user_name} entry={win.attributes.entry} date={win.attributes.created_at}/>
       </CardContainer>
     );
   });
