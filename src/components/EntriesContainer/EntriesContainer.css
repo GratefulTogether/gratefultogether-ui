@@ -9,12 +9,7 @@
   align-items: center;
 }
 
-.today-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-}
+
 
 h2 {
   font-size: 2em;

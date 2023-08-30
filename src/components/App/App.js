@@ -11,7 +11,7 @@ import { createConsumer } from '@rails/actioncable';
 
 const App = () => {
   const [wins, setWins] = useState([])
-  const [date, setDate] = useState('8/31/2023')
+  const [date, setDate] = useState(null)
   // need to update to setDate
   // make sure they cannot select future date
 

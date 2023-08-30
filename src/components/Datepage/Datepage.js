@@ -13,7 +13,7 @@ const Datepage = ({date, setDate, wins, setWins}) => {
         <img className='home-logo' src={Homelogo} alt="logo with open book" />
         </NavLink>
         <h1>Entries for {date}:</h1>
-      <EntriesContainer wins={wins} setWins={setWins} />
+      <EntriesContainer wins={wins} date={date} setDate={setDate}/>
       </div>
     </>
   )
