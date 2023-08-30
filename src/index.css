@@ -1,25 +1,20 @@
-* {
+/* * {
   font-family: 'Montserrat', sans-serif;
-}
+} */
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Cormorant', serif;
   font-weight: 300;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Architects Daughter', 'Cedarville Cursive', 'Gaegu', 'Comforter Brush', 'Give You Glory',
+    'Gloria Hallelujah', 'Homemade Apple', 'Indie Flower', 'Mr De Haviland', 'Reenie Beanie',
+    cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f6ebee;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 button:hover {
@@ -32,3 +27,15 @@ button:hover {
 --secondary: #f6acc7; pink
 --accent: #30a2af; teal 
 */ 
+
+/* HANDWRITING FONTS FOR CARDS */
+/* font-family: 'Architects Daughter', cursive;
+font-family: 'Cedarville Cursive', cursive;
+font-family: 'Comforter Brush', cursive;
+font-family: 'Gaegu', cursive;
+font-family: 'Give You Glory', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Homemade Apple', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Mr De Haviland', cursive;
+font-family: 'Reenie Beanie', cursive; */
