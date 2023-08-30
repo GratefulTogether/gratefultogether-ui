@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import styled from 'styled-components';
 import { useState } from 'react';
+import './Form.css'
 
 const TheForm = styled.form `
   display: flex;
@@ -73,7 +74,7 @@ const Form = () => {
     }
 
   return (
-      <div>
+      <div className="form-container">
     <TheForm>
       {formattedDate}
       <TextInput value={message} type='text' placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
