@@ -3,6 +3,8 @@ import logo from '../../images/GratefulTogetherLogo.png'
 import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
 import Nav from "../NavBar/NavBar.js";
+import { useState } from 'react';
+import CalendarModal from '../CalendarModal/CalendarModal.js';
 
 const HomepageContainer = styled.div `
   display: flex;
@@ -17,6 +19,22 @@ const Logo = styled.img `
 
 const Homepage = ({wins, setWins, date, setDate}) => {
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const renderModal = () => {
+		return (
+			<CalendarModal closeModal={closeModal} date={date} setDate={setDate}/>
+		)
+	}
+
   return (
     <>
     <Nav />
@@ -25,6 +43,9 @@ const Homepage = ({wins, setWins, date, setDate}) => {
       <Form />
       <EntriesContainer wins = {wins} setWins = {setWins} date={date} setDate={setDate}/>
     </HomepageContainer>
+     <h2>Today's Entries:</h2>
+        <button onClick={handleClick}>View Past Entry</button>
+        {isModalOpen && renderModal()}
     </>
   )
 } 

@@ -25,21 +25,21 @@ const EntriesContainer = ({wins, date, setDate}) => {
     return notecards[Math.floor(Math.random() * notecards.length)];
   };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClick = () => {
-    setIsModalOpen(true);
-  };
+  // const handleClick = () => {
+  //   setIsModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
-  const renderModal = () => {
-		return (
-			<CalendarModal closeModal={closeModal} date={date} setDate={setDate}/>
-		)
-	}
+  // const renderModal = () => {
+	// 	return (
+	// 		<CalendarModal closeModal={closeModal} date={date} setDate={setDate}/>
+	// 	)
+	// }
 
   const singleWin = wins.map(win => {
     return (
@@ -52,9 +52,9 @@ const EntriesContainer = ({wins, date, setDate}) => {
   return (
     <div className='today-info-container'>
       <div className='today-info'>
-        {date && <h2>Today's Entries:</h2>}
-        <button onClick={handleClick}>View Past Entry</button>
-        {isModalOpen && renderModal()}
+        {/* {date && <h2>Today's Entries:</h2>}
+        <button onClick={handleClick}>View Past Entry</button> */}
+        {/* {isModalOpen && renderModal()} */}
       </div>
       <EContainer>
         {wins.length ? singleWin : <p>Nothing recorded yet today!</p>} 
