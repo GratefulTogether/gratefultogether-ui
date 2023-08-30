@@ -17,27 +17,11 @@ jobs:
           root: ~/project
           paths:
             - .
-
-  run_server:
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: npm
-      - run:
-          name: Start local server
-          command: npm run start:dev
-          background: true
-
 workflows:
-  version: 2
   test_my_app:
     jobs:
-      - run_server
-      - cypress/run:
-          requires:
-            - run_server
+      - cypress/run: 
           cypress-command: npx cypress run --browser electron --config baseUrl=http://localhost:3000
-      - build:
-          requires:
-            - cypress/run
+          # install-browsers: true
+          # start-command: npm run start:dev
+      - build
