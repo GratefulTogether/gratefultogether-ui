@@ -24,6 +24,7 @@ const Homepage = ({wins, setWins, date, setDate}) => {
 
   const handleClick = () => {
     setIsModalOpen(true);
+    setDate(null)
   };
 
   const closeModal = () => {
