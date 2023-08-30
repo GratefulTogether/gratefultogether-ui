@@ -8,3 +8,10 @@
   width: 300px;
   align-self: center;
 } */
+.today-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  align-self: center;
+}

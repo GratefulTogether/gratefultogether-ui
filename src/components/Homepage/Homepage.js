@@ -5,6 +5,7 @@ import EntriesContainer from "../EntriesContainer/EntriesContainer"
 import Nav from "../NavBar/NavBar.js";
 import { useState } from 'react';
 import CalendarModal from '../CalendarModal/CalendarModal.js';
+import './Homepage.css'
 
 const HomepageContainer = styled.div `
   display: flex;
@@ -43,9 +44,11 @@ const Homepage = ({wins, setWins, date, setDate}) => {
       <Form />
       <EntriesContainer wins = {wins} setWins = {setWins} date={date} setDate={setDate}/>
     </HomepageContainer>
+    <div className='today-info'>
      <h2>Today's Entries:</h2>
         <button onClick={handleClick}>View Past Entry</button>
         {isModalOpen && renderModal()}
+      </div>
     </>
   )
 } 
