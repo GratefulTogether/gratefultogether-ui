@@ -80,7 +80,7 @@ const Form = () => {
       <TextInput value={message} type='text' placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
       <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
     </TheForm>
-      {errMessage && <p>EOORRROR</p>}
+      {errMessage && <p>Please Fill Out Form</p>}
       </div>
   )
 }
