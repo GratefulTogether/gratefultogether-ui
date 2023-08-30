@@ -17,11 +17,28 @@ jobs:
           root: ~/project
           paths:
             - .
+
+  start_server:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Start server
+          command: npm run start:dev
+        background: true
+
 workflows:
   test_my_app:
     jobs:
+      - start_server
+      - run:
+          name: Delay before running Cypress tests
+          command: sleep 10
+          requires:
+            - start_server
       - cypress/run: 
           cypress-command: npx cypress run --browser electron
-          # install-browsers: true
-          # start-command: npm run start:dev
-      - build
+          requires:
+            - start_server
