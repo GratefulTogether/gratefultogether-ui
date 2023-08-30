@@ -28,7 +28,7 @@ workflows:
       - build
       - deploy:
           requires:
-            - build # only deploy if the build_and_test job has completed
+            - build 
           filters:
             branches:
-              only: main # only deploy when on main
+              only: main
