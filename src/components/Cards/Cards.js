@@ -54,6 +54,7 @@ const Cards = ({name, entry, date, className}) => {
 
   const shortDate = date.slice(0,10)
   const formattedDate = dayjs(shortDate).format('MMMM D, YYYY');
+  
 
   return (
     <Card className={className}>
