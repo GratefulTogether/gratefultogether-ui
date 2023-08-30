@@ -4,19 +4,18 @@ import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
 import Nav from "../NavBar/NavBar.js";
 
+const HomepageContainer = styled.div `
+  display: flex;
+  flex-direction: column;
+`
+
+const Logo = styled.img `
+  height: auto;
+  width: 450px;
+  align-self: center;
+`
+
 const Homepage = ({wins, setWins, date, setDate}) => {
-
-  const HomepageContainer = styled.div `
-    display: flex;
-    flex-direction: column;
-  `
-  
-  const Logo = styled.img `
-    height: auto;
-    width: 450px;
-    align-self: center;
-  `
-
 
   return (
     <>

@@ -5,22 +5,19 @@ import './EntriesContainer.css'
 import CalendarModal from '../CalendarModal/CalendarModal';
 import { useState } from 'react';
 
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+  transition: background-color 1s;
+`;
+
+const EContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 const EntriesContainer = ({wins, date, setDate}) => {
-
-  const CardContainer = styled.div`
-    display:flex;
-    justify-content: center;
-    margin: 2%;
-    transition: background-color 1s;
-    
-  `;
-
-  const EContainer = styled.div`
-
- 
-
-  `;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -37,12 +34,6 @@ const EntriesContainer = ({wins, date, setDate}) => {
 			<CalendarModal closeModal={closeModal} date={date} setDate={setDate}/>
 		)
 	}
-
-  // const displayWins = () => {
-  //   if (wins is an object) {
-
-  //   }
-  // }
 
   const singleWin = wins.map(win => {
     return (

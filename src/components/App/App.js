@@ -1,7 +1,7 @@
 import Homepage from '../Homepage/Homepage'
 import Datepage from '../Datepage/Datepage'
 import NotFound from '../NotFound/NotFound'
-import cardData from '../../cardMockData';
+// import cardData from '../../cardMockData';
 import './App.css'
 import { useState, useEffect } from 'react';
 import { Routes, Route} from 'react-router-dom'
@@ -10,34 +10,34 @@ import { createConsumer } from '@rails/actioncable';
 
 
 const App = () => {
-const [wins, setWins] = useState([])
-const [date, setDate] = useState('8/31/2023')
-// need to update to setDate
+  const [wins, setWins] = useState([])
+  const [date, setDate] = useState('8/31/2023')
+  // need to update to setDate
+  // make sure they cannot select future date
 
-useEffect(() => {
-  const cable = createConsumer('ws://localhost:3000/cable');
+  useEffect(() => {
+    fetch('http://localhost:3000/api/v1/wins')
+      .then(res => res.json())
+      .then(data => setWins(data.data))
+      .catch(err => console.log(err))
+    }, [])
 
-  const subscription = cable.subscriptions.create({
-    channel: 'WinsChannel',
-  }, {
-    connected: () => console.log('connected'),
-    disconnected: () => console.log('disconnected'),
-    received: (data) => {
-      if (typeof data.data === 'object' && data.data.constructor === Array) {
-        setWins(data.data)
-      } else {
-        setWins([data.data])
-      }
-    },
-    // need to write a function to account for the first win being an object and not an array in EntriesContainer
-  });
+  useEffect(() => {
+    const cable = createConsumer('ws://localhost:3000/cable');
 
-  return () => {
-    cable.disconnect();
-    subscription.unsubscribe();
-  };
+    const subscription = cable.subscriptions.create({
+      channel: 'WinsChannel',
+    }, {
+      connected: () => console.log('connected'),
+      disconnected: () => console.log('disconnected'),
+      received: (data) => setWins(wins => [...wins, data.data])
+    });
 
-},[])
+    return () => {
+      cable.disconnect();
+      subscription.unsubscribe();
+    };
+  },[])
 
   return (
     <div className='App'>
