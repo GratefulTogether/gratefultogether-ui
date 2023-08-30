@@ -34,11 +34,17 @@ const EntriesContainer = ({wins, date, setDate}) => {
 
   const renderModal = () => {
 		return (
-			<CalendarModal closeModal={closeModal} date = {date} setDate ={setDate}/>
+			<CalendarModal closeModal={closeModal} date={date} setDate={setDate}/>
 		)
 	}
 
-  const singleWin = wins.data.map(win => {
+  // const displayWins = () => {
+  //   if (wins is an object) {
+
+  //   }
+  // }
+
+  const singleWin = wins.map(win => {
     return (
       <CardContainer key={win.id}> 
         <Cards name={win.attributes.user_name} entry={win.attributes.entry} date={win.attributes.created_at}/>
@@ -54,7 +60,7 @@ const EntriesContainer = ({wins, date, setDate}) => {
         {isModalOpen && renderModal()}
       </div>
       <EContainer>
-        {wins.data.length ? singleWin : <p>Nothing recorded yet today!</p>} 
+        {wins.length ? singleWin : <p>Nothing recorded yet today!</p>} 
       </EContainer>
     </div>
   );

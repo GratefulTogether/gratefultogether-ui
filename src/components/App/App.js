@@ -10,19 +10,20 @@ import { createConsumer } from '@rails/actioncable';
 
 
 const App = () => {
-const [wins, setWins] = useState(cardData)
+const [wins, setWins] = useState([])
 const [date, setDate] = useState('8/31/2023')
+// need to update to setDate
 
 useEffect(() => {
-  const cable = createConsumer('ws://localhost:5000/cable');
+  const cable = createConsumer('ws://localhost:3000/cable');
 
   const subscription = cable.subscriptions.create({
     channel: 'WinsChannel',
-    // username: 'cool_kid_20',
   }, {
     connected: () => console.log('connected'),
     disconnected: () => console.log('disconnected'),
-    received: (data) => console.log(data),
+    received: (data) => setWins(data.data),
+    // need to write a function to account for the first win being an object and not an array in EntriesContainer
   });
 
   return () => {

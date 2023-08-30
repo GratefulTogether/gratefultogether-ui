@@ -43,9 +43,9 @@ const Form = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault()
-      fetch('http://localhost:5000/wins', {
+      fetch('http://localhost:3000/api/v1/wins', {
         method: 'POST',
-        body: JSON.stringify({message}),
+        body: JSON.stringify({user_id: 1, message}),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -56,7 +56,7 @@ const Form = () => {
           throw new Error('ERRORROROROR')
         }
       })
-      .then(res => res.json())
+      .then(res => {res.json()})
       .catch(err => console.log(err))
     }
 
@@ -64,7 +64,7 @@ const Form = () => {
     <TheForm>
       {formattedDate}
       <TextInput value={message} type='text' placeholder='Write here' onChange={e => setMessage(e.target.value)}></TextInput>
-      <Submit type='submit' onCLick={e => handleSubmit(e)}>Submit</Submit>
+      <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
     </TheForm>
   )
 }
