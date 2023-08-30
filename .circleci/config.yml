@@ -26,9 +26,3 @@ workflows:
           # install-browsers: true
           # start-command: npm run start:dev
       - build
-      - deploy:
-          requires:
-            - build 
-          filters:
-            branches:
-              only: main
