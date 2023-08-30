@@ -22,7 +22,13 @@ useEffect(() => {
   }, {
     connected: () => console.log('connected'),
     disconnected: () => console.log('disconnected'),
-    received: (data) => setWins(data.data),
+    received: (data) => {
+      if (typeof data.data === 'object' && data.data.constructor === Array) {
+        setWins(data.data)
+      } else {
+        setWins([data.data])
+      }
+    },
     // need to write a function to account for the first win being an object and not an array in EntriesContainer
   });
 
