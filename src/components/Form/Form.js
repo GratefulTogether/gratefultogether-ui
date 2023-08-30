@@ -1,10 +1,6 @@
 import dayjs from 'dayjs'
 import styled from 'styled-components';
-
-const Form = () => {
-
-const today = dayjs();
-const formattedDate = today.format('MMMM D, YYYY');
+import { useState } from 'react';
 
 const TheForm = styled.form `
   display: flex;
@@ -38,11 +34,41 @@ const Submit = styled.button`
   } 
 `
 
+const Form = () => {
+
+  const [message, setMessage] = useState("")
+
+  const today = dayjs();
+  const formattedDate = today.format('MMMM D, YYYY');
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      fetch('http://localhost:3000/api/v1/wins', {
+        method: 'POST',
+        body: JSON.stringify({user_id: 1, message}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => {
+        if (res.ok) {
+          return res
+        } else {
+          throw new Error('ERRORROROROR')
+        }
+      })
+      .then(res => {setMessage('')})
+      .catch(err => console.log(err))
+    }
+
+    const updateMessage = (e) => {
+      setMessage(e.target.value)
+    }
+
   return (
     <TheForm>
       {formattedDate}
-      <TextInput type='text' placeholder='Write here'></TextInput>
-      <Submit type='submit'>Submit</Submit>
+      <TextInput value={message} type='text' placeholder='Write here' onChange={e => updateMessage(e)}></TextInput>
+      <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
     </TheForm>
   )
 }

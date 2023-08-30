@@ -5,6 +5,17 @@ import './EntriesContainer.css'
 import CalendarModal from '../CalendarModal/CalendarModal';
 import { useState } from 'react';
 
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+  transition: background-color 1s;
+`;
+
+const EContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 const EntriesContainer = ({wins, date, setDate}) => {
   
@@ -13,20 +24,6 @@ const EntriesContainer = ({wins, date, setDate}) => {
   let randomClass = () => {
     return notecards[Math.floor(Math.random() * notecards.length)];
   };
-
-  const CardContainer = styled.div`
-    display:flex;
-    justify-content: center;
-    margin: 2%;
-    transition: background-color 1s;
-    
-  `;
-
-  const EContainer = styled.div`
-
- 
-
-  `;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -40,11 +37,11 @@ const EntriesContainer = ({wins, date, setDate}) => {
 
   const renderModal = () => {
 		return (
-			<CalendarModal closeModal={closeModal} date = {date} setDate ={setDate}/>
+			<CalendarModal closeModal={closeModal} date={date} setDate={setDate}/>
 		)
 	}
 
-  const singleWin = wins.data.map(win => {
+  const singleWin = wins.map(win => {
     return (
       <CardContainer key={win.id}> 
         <Cards className={`${randomClass()}`} name={win.attributes.user_name} entry={win.attributes.entry} date={win.attributes.created_at}/>
@@ -60,7 +57,7 @@ const EntriesContainer = ({wins, date, setDate}) => {
         {isModalOpen && renderModal()}
       </div>
       <EContainer>
-        {wins.data.length ? singleWin : <p>Nothing recorded yet today!</p>} 
+        {wins.length ? singleWin : <p>Nothing recorded yet today!</p>} 
       </EContainer>
     </div>
   );
