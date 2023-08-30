@@ -67,7 +67,7 @@ const Form = () => {
   return (
     <TheForm>
       {formattedDate}
-      <TextInput value={message} type='text' placeholder='Write here' onChange={e => updateMessage(e)}></TextInput>
+      <TextInput value={message} type='text' placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
       <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
     </TheForm>
   )
