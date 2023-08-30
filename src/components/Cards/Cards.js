@@ -7,6 +7,7 @@ import tanCircle from '../../images/notecards/orange.png';
 import tanSquare from '../../images/notecards/orange1.png';
 import yellowSq from '../../images/notecards/orange2.png';
 import yellow from '../../images/notecards/yellow.png';
+import dayjs from 'dayjs'
 
 const imageMapping = {
   purple: purple,
@@ -51,10 +52,13 @@ const WinOfCard = styled.div`
 
 const Cards = ({name, entry, date, className}) => {
 
+  const shortDate = date.slice(0,10)
+  const formattedDate = dayjs(shortDate).format('MMMM D, YYYY');
+
   return (
     <Card className={className}>
       <TitleOfCard>
-        <h3>Date: {date} </h3>
+        <h3>Date: {formattedDate} </h3>
         <h3>Name: {name} </h3>
       </TitleOfCard>  
       <WinOfCard>
