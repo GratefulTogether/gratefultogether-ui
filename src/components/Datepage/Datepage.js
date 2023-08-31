@@ -11,6 +11,13 @@ const Datepage = ({wins, setWins}) => {
   const formattedDate = dayjs(date).format('MMMM D, YYYY')
   const navigate = useNavigate();
 
+  const getEntryByDate = (date) => {
+    fetch(`http://localhost:3000/api/v1/wins?date=${date}`)
+      .then(res => res.json())
+      .then(data => setWins(data.data))
+      .catch(err => console.log(err))
+  }
+
   useEffect(() => {
     if (formattedDate === 'Invalid Date' || !date) {
       navigate("*");
@@ -18,14 +25,8 @@ const Datepage = ({wins, setWins}) => {
     else {
       getEntryByDate(date)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  const getEntryByDate = (date) => {
-    fetch(`http://localhost:3000/api/v1/wins?date=${date}`)
-      .then(res => res.json())
-      .then(data => setWins(data.data))
-      .catch(err => console.log(err))
-  }
 
   if (!wins) {
     return (
