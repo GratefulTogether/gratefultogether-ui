@@ -43,7 +43,7 @@ const App = () => {
     <div className='App'>
       <Routes>
         <Route exact path='/' element={<Homepage wins = {wins} setWins = {setWins} date = {date} setDate= {setDate}/>} />
-        <Route path='/date' element={<Datepage date = {date} setDate = {setDate} wins = {wins} setWins = {setWins}/>} />
+        <Route path='date/:date' element={<Datepage date = {date} setDate = {setDate} wins = {wins} setWins = {setWins}/>} />
         <Route path='*' element={<NotFound />}/>
         <Route path='error' element={<NotFound/>}/>
       </Routes> 

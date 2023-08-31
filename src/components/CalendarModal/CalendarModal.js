@@ -9,7 +9,7 @@ const CalendarModal = ({ closeModal, date, setDate }) => {
   const today = dayjs();
   const formattedDate = today.format('YYYY-MM-DD');
 
-
+  
 
   return (
     <div className="modal">
@@ -17,7 +17,7 @@ const CalendarModal = ({ closeModal, date, setDate }) => {
         <button className="modal-close" onClick={closeModal}><img src={close} alt='close modal'/></button>
         <h3>Select your date: </h3>
         <input type='date' className='date'  onChange={e => setDate(e.target.value)} max={formattedDate}/>
-        <Link to='/date'>
+        <Link to={`date/${date}`}>
         <button type='submit' disabled={!date} >Submit</button>
       </Link>
       </div>
