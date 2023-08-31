@@ -25,7 +25,7 @@ const Homepage = ({wins, setWins, date, setDate}) => {
       .then(res => res.json())
       .then(data => setWins(data.data))
       .catch(err => console.log(err))
-    }, [])
+    }, [setWins])
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
