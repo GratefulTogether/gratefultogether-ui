@@ -3,7 +3,7 @@ import logo from '../../images/GratefulTogetherLogo.png'
 import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
 import Nav from "../NavBar/NavBar.js";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CalendarModal from '../CalendarModal/CalendarModal.js';
 import './Homepage.css'
 
@@ -20,11 +20,17 @@ const Logo = styled.img `
 
 const Homepage = ({wins, setWins, date, setDate}) => {
 
+  useEffect(() => {
+    fetch('http://localhost:3000/api/v1/wins')
+      .then(res => res.json())
+      .then(data => setWins(data.data))
+      .catch(err => console.log(err))
+    }, [])
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
     setIsModalOpen(true);
-    setDate(null)
   };
 
   const closeModal = () => {
@@ -43,7 +49,7 @@ const Homepage = ({wins, setWins, date, setDate}) => {
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-      <EntriesContainer wins = {wins} setWins = {setWins} date={date} setDate={setDate}/>
+      <EntriesContainer wins={wins} setWins={setWins} date={date} setDate={setDate}/>
     </HomepageContainer>
     <div className='today-info'>
      <h2>Today's Entries:</h2>
