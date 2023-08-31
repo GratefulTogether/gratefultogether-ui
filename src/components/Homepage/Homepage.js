@@ -49,13 +49,13 @@ const Homepage = ({wins, setWins, date, setDate}) => {
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-      <EntriesContainer wins={wins} setWins={setWins} date={date} setDate={setDate}/>
-    </HomepageContainer>
-    <div className='today-info'>
-     <h2>Today's Entries:</h2>
-        <button onClick={handleClick}>View Past Entry</button>
-        {isModalOpen && renderModal()}
+      <div className='today-info'>
+        <h2>Today's Entries:</h2>
+          <button onClick={handleClick}>View Past Entry</button>
+          {isModalOpen && renderModal()}
       </div>
+      <EntriesContainer wins={wins}/>
+    </HomepageContainer>
     </>
   )
 } 

@@ -3,7 +3,6 @@ import Cards from '../Cards/Cards'
 import styled from 'styled-components';
 import './EntriesContainer.css'
 
-
 const CardContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -23,8 +22,6 @@ const EntriesContainer = ({wins}) => {
     return notecards[Math.floor(Math.random() * notecards.length)];
   };
 
-
-
   const singleWin = wins.map(win => {
     return (
       <CardContainer key={win.id}> 
@@ -36,7 +33,7 @@ const EntriesContainer = ({wins}) => {
   return (
     <div className='today-info-container'>
       <EContainer>
-        {!!wins.length ? singleWin : <p>Nothing recorded yet today!</p>} 
+        {!!wins.length ? singleWin : <p>Nothing recorded for this date!</p>} 
       </EContainer>
     </div>
   );

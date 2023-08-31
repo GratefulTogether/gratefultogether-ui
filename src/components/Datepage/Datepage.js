@@ -2,11 +2,9 @@ import './Datepage.css'
 import Homelogo from '../../images/Homelogo.png'
 import Nav from "../NavBar/NavBar.js";
 import EntriesContainer from '../EntriesContainer/EntriesContainer';
-import { NavLink } from 'react-router-dom';
 import dayjs from 'dayjs'
 import { useEffect } from 'react';
-import {useNavigate, useParams} from 'react-router-dom'
-// import { useEffect } from 'react';
+import {NavLink, useNavigate, useParams} from 'react-router-dom'
 
 const Datepage = ({wins, setWins}) => {
   let { date } = useParams()
@@ -35,15 +33,11 @@ const Datepage = ({wins, setWins}) => {
     )
   }
 
-  const handleClick = () => {
-    console.log('Workin!')
-  }
-
   return (
     <>
       <Nav />
       <div className='date-page-container'>
-        <NavLink to = "/" onClick={handleClick}>
+        <NavLink to = "/">
           <img className='home-logo' src={Homelogo} alt="home logo" />
         </NavLink>
         <h1>Entries for {formattedDate}:</h1>
