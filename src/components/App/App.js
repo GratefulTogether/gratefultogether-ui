@@ -28,7 +28,6 @@ const App = () => {
 
     cable.connection.events.error = function(e) { 
       setError(true) 
-      console.log(e.type)
     }
 
     return () => {
