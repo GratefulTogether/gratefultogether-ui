@@ -17,21 +17,21 @@ In order to clone this application:
 ![Preview of Grateful Together](link)
 
 ### Context:
-We are currently in Mod 4 of the Turing Frontend Development Program. A total of __ hours were spent on this project.
+We are currently in Mod 4 of the Turing Frontend Development Program. A total of 40 hours were spent on this project.
 
 ### Contributors
 <table>
   <tr>
-    <td> Caitlin Cradick <a href="https://github.com/CaliHam">Github</td>
+    <td> Caitlin Cradick <a href="https://github.com/caitlincradick">Github</td>
   </tr>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="NAME GH img"
+    <td><img src="https://avatars.githubusercontent.com/u/119264690?v=4" alt="NAME GH img"
   width="150" height="auto" /></td>
   <tr>
     <td> Victor Sriqui <a href="https://github.com/vsriqui">Github</td>
   </tr>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="NAME GH img"
+    <td><img src="https://avatars.githubusercontent.com/u/123952182?v=4" alt="NAME GH img"
   width="150" height="auto" /></td>
   <tr>
     <td> Natalie Baker <a href="https://github.com/Nathelene">Github</td>
@@ -40,7 +40,7 @@ We are currently in Mod 4 of the Turing Frontend Development Program. A total of
     <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="NAME GH img"
   width="150" height="auto" /></td>
   <tr>
-    <td> Callihan Herrmann <a href="https://github.com/caitlincradick">Github</td>
+    <td> Callihan Herrmann <a href="https://github.com/CaliHam">Github</td>
   </tr>
   <tr>
     <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="NAME GH img"
