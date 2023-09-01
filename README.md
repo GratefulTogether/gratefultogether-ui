@@ -1,7 +1,7 @@
 
 # Grateful Together
-### [View Deployed Site](link.app)
-### [View The Back-End Repo Here](linktogithub)
+### [View Deployed Site](https://gratefultogether-68rtro4pr-caliham.vercel.app/)
+### [View The Back-End Repo Here](https://github.com/GratefulTogether/gratefultogether-api)
 
 ## Abstract: 
 lots of text here
