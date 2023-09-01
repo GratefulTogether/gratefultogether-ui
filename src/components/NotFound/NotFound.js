@@ -3,9 +3,14 @@ import React from 'react'
 import pagenotfound from '../../images/404.svg'
 import './NotFound.css'
 
-const NotFound = () => {
+const NotFound = ({error}) => {
+
+  console.log(error)
+
   return (
-    <img src={pagenotfound} className='not-found' alt='404 page not found' />
+    <>
+      {!error && <img src={pagenotfound} className='not-found' alt='404 page not found' />}
+    </>
   )
 }
 
