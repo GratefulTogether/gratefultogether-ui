@@ -12,7 +12,7 @@ const Datepage = ({wins, setWins}) => {
   const navigate = useNavigate();
 
   const getEntryByDate = (date) => {
-    fetch(`http://localhost:3000/api/v1/wins?date=${date}`)
+    fetch(`https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins?date=${date}`)
       .then(res => res.json())
       .then(data => setWins(data.data))
       .catch(err => console.log(err))
