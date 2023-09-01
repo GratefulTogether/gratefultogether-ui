@@ -8,8 +8,9 @@ lots of text here
 
 ### Installation Instructions
 In order to clone this application:
-- bullet
-- list
+1. Fork this repo, and clone it down into your local machine using the SSH key
+2. After cloning it down, `cd` into the project and run `npm install`
+3. Once the installation is done, you can now run `npm start` to run the application in your web browser
 
 ### Preview of App:
 
