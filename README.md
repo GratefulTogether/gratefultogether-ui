@@ -1,6 +1,7 @@
 
 # Grateful Together
-### [View Deployed Site](https://gratefultogether-68rtro4pr-caliham.vercel.app/)
+[![GratefulTogether](https://circleci.com/gh/GratefulTogether/gratefultogether-ui.svg?style=shield)](https://app.circleci.com/pipelines/github/GratefulTogether/gratefultogether-ui)
+### [View Deployed Site](https://gratefultogether.vercel.app/)
 ### [View The Back-End Repo Here](https://github.com/GratefulTogether/gratefultogether-api)
 
 ## Abstract: 
@@ -11,7 +12,7 @@ In order to clone this application:
 1. Fork this repo, and clone it down into your local machine using the SSH key
 2. After cloning it down, `cd` into the project and run `npm install`
 3. Once the installation is done, you can now run `npm start` to run the application in your web browser
-
+4. Install backend repository 
 ### Preview of App:
 
 ![Preview of Grateful Together](link)
@@ -20,32 +21,11 @@ In order to clone this application:
 We are currently in Mod 4 of the Turing Frontend Development Program. A total of 40 hours were spent on this project.
 
 ### Contributors
-<table>
-  <tr>
-    <td> Caitlin Cradick <a href="https://github.com/caitlincradick">Github</td>
-  </tr>
-  <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/119264690?v=4" alt="NAME GH img"
-  width="150" height="auto" /></td>
-  <tr>
-    <td> Victor Sriqui <a href="https://github.com/vsriqui">Github</td>
-  </tr>
-  <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/123952182?v=4" alt="NAME GH img"
-  width="150" height="auto" /></td>
-  <tr>
-    <td> Natalie Baker <a href="https://github.com/Nathelene">Github</td>
-  </tr>
-  <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="NAME GH img"
-  width="150" height="auto" /></td>
-  <tr>
-    <td> Callihan Herrmann <a href="https://github.com/CaliHam">Github</td>
-  </tr>
-  <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="NAME GH img"
-  width="150" height="auto" /></td>
-</table>
+
+- Natalie Baker - [Github](https://github.com/Nathelene) | [LinkedIn](https://www.linkedin.com/in/natalie-baker-678323272/)
+- Victor Sriqui - [Github](https://github.com/vsriqui) | [LinkedIn](https://www.linkedin.com/in/victor-sriqui/)
+- Callihan Herman - [Github](https://github.com/CaliHam) | [LinkedIn](https://www.linkedin.com/in/callihan-herrmann/)
+- Caitlin Cradick - [Github](https://github.com/caitlincradick) | [LinkedIn](https://www.linkedin.com/in/caitlin-cradick-a91625246/)
 
 ### Learning Goals:
 - Demonstrate knowledge you’ve gained throughout Turing
@@ -58,6 +38,5 @@ We are currently in Mod 4 of the Turing Frontend Development Program. A total of
 - Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
 
 ### Tech Stack
-- JavaScript, CSS/HTML, Cypress, Webpack, React, React Router, FETCH API's, Express JS
+- JavaScript, CSS/HTML, Cypress, Webpack, React, React Router, FETCH API's, Action Cable Websockets
 
-#### Dependencies (if needed)
