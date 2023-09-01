@@ -2,43 +2,50 @@ import './Datepage.css'
 import Homelogo from '../../images/Homelogo.png'
 import Nav from "../NavBar/NavBar.js";
 import EntriesContainer from '../EntriesContainer/EntriesContainer';
-import { NavLink } from 'react-router-dom';
 import dayjs from 'dayjs'
-import {useLocation, useNavigate} from 'react-router-dom'
 import { useEffect } from 'react';
+import {NavLink, useNavigate, useParams} from 'react-router-dom'
 
-const Datepage = ({date, setDate, wins, setWins}) => {
-
+const Datepage = ({wins, setWins}) => {
+  let { date } = useParams()
+  const formattedDate = dayjs(date).format('MMMM D, YYYY')
   const navigate = useNavigate();
-  
-  const path = useLocation()
-  const {pathname} = path
-  const urlDate = pathname.slice(pathname.length - 10, pathname.length)
-  const bannerDate = dayjs(urlDate);
-  const formattedDate = bannerDate.format('MMMM D YYYY');
 
- 
-    useEffect(() => {
-      if (formattedDate === 'Invalid Date') {
-        navigate("*");
-      }
-    }, [navigate, formattedDate])
+  const getEntryByDate = (date) => {
+    fetch(`http://localhost:3000/api/v1/wins?date=${date}`)
+      .then(res => res.json())
+      .then(data => setWins(data.data))
+      .catch(err => console.log(err))
+  }
 
+  useEffect(() => {
+    if (formattedDate === 'Invalid Date' || !date) {
+      navigate("*");
+    }
+    else {
+      getEntryByDate(date)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-  if (formattedDate !== 'Invalid Date') {
+  if (!wins) {
+    return (
+      <p>Loading...</p>
+    )
+  }
+
   return (
     <>
       <Nav />
       <div className='date-page-container'>
         <NavLink to = "/">
-        <img className='home-logo' src={Homelogo} alt="logo with open book" />
+          <img className='home-logo' src={Homelogo} alt="home logo" />
         </NavLink>
         <h1>Entries for {formattedDate}:</h1>
-      <EntriesContainer wins={wins} date={date} setDate={setDate}/>
+        <EntriesContainer wins={wins}/>
       </div>
     </>
   )
-  } 
 }
 
 export default Datepage

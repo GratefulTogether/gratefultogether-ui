@@ -3,7 +3,6 @@ import Cards from '../Cards/Cards'
 import styled from 'styled-components';
 import './EntriesContainer.css'
 
-
 const CardContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -16,15 +15,12 @@ const EContainer = styled.div`
   flex-direction: column-reverse;
 `;
 
-const EntriesContainer = ({wins, date, setDate}) => {
-  
+const EntriesContainer = ({wins}) => {
   const notecards = ['green', 'lightGreen', 'purple', 'tanCircle', 'tanSquare', 'yellow', 'yellowSq'];
 
   let randomClass = () => {
     return notecards[Math.floor(Math.random() * notecards.length)];
   };
-
-
 
   const singleWin = wins.map(win => {
     return (
@@ -37,7 +33,7 @@ const EntriesContainer = ({wins, date, setDate}) => {
   return (
     <div className='today-info-container'>
       <EContainer>
-        {wins.length ? singleWin : <p>Nothing recorded yet today!</p>} 
+        {!!wins.length ? singleWin : <p>Nothing recorded for this date!</p>} 
       </EContainer>
     </div>
   );

@@ -1,26 +1,14 @@
 import Homepage from '../Homepage/Homepage'
 import Datepage from '../Datepage/Datepage'
 import NotFound from '../NotFound/NotFound'
-// import cardData from '../../cardMockData';
 import './App.css'
 import { useState, useEffect } from 'react';
 import { Routes, Route} from 'react-router-dom'
 import { createConsumer } from '@rails/actioncable';
 
-
-
 const App = () => {
   const [wins, setWins] = useState([])
   const [date, setDate] = useState(null)
-  // need to update to setDate
-  // make sure they cannot select future date
-
-  useEffect(() => {
-    fetch('http://localhost:3000/api/v1/wins')
-      .then(res => res.json())
-      .then(data => setWins(data.data))
-      .catch(err => console.log(err))
-    }, [])
 
   useEffect(() => {
     const cable = createConsumer('ws://localhost:3000/cable');
@@ -42,8 +30,8 @@ const App = () => {
   return (
     <div className='App'>
       <Routes>
-        <Route exact path='/' element={<Homepage wins = {wins} setWins = {setWins} date = {date} setDate= {setDate}/>} />
-        <Route path='date/:date' element={<Datepage date = {date} setDate = {setDate} wins = {wins} setWins = {setWins}/>} />
+        <Route exact path='/' element={<Homepage wins={wins} setWins={setWins} date={date} setDate={setDate}/>} />
+        <Route path='date/:date' element={<Datepage wins={wins} setWins={setWins}/>} />
         <Route path='*' element={<NotFound />}/>
         <Route path='error' element={<NotFound/>}/>
       </Routes> 
