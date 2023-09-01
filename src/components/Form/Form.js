@@ -43,6 +43,12 @@ const Form = () => {
   const today = dayjs();
   const formattedDate = today.format('MMMM D, YYYY');
 
+  const getRandomUser = () => {
+    return Math.floor(Math.random() * 62);
+  }
+
+  const randomUserNum = getRandomUser()
+
     const handleSubmit = (e) => {
       e.preventDefault()
       if (!message) {
@@ -50,7 +56,7 @@ const Form = () => {
       } else {
       fetch('https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins', {
         method: 'POST',
-        body: JSON.stringify({user_id: 1, message}),
+        body: JSON.stringify({user_id:randomUserNum, message}),
         headers: {
           'Content-Type': 'application/json'
         }
