@@ -4,7 +4,7 @@
 ### [View The Back-End Repo Here](https://github.com/GratefulTogether/gratefultogether-api)
 
 ## Abstract: 
-lots of text here
+Greatful Together is a simple and intuitive tool designed to help you celebrate your daily victories and accomplishments. With this app, you can easily record and view your wins for each day, creating a positive and motivating record of your achievements over time. Whether it's a small personal triumph or a major milestone, this app encourages you to acknowledge and appreciate your daily wins.
 
 ### Installation Instructions
 In order to clone this application:
