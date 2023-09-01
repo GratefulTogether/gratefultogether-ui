@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import { useEffect } from 'react';
 import {NavLink, useNavigate, useParams} from 'react-router-dom'
 
-const Datepage = ({wins, setWins}) => {
+const Datepage = ({wins, setWins, setError}) => {
   let { date } = useParams()
   const formattedDate = dayjs(date).format('MMMM D, YYYY')
   const navigate = useNavigate();
@@ -14,8 +14,14 @@ const Datepage = ({wins, setWins}) => {
   const getEntryByDate = (date) => {
     fetch(`https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins?date=${date}`)
       .then(res => res.json())
-      .then(data => setWins(data.data))
-      .catch(err => console.log(err))
+      .then(data => {
+        setWins(data.data)
+        setError(false)
+      })
+      .catch(err => {
+        setError(true)
+        console.log(err)
+      })
   }
 
   useEffect(() => {
