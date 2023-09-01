@@ -1,6 +1,6 @@
 import Homepage from '../Homepage/Homepage'
 import Datepage from '../Datepage/Datepage'
-import NotFound from '../NotFound/NotFound'
+import Error from '../Error/Error'
 import './App.css'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom'
@@ -49,8 +49,8 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<Homepage wins={wins} setWins={setWins} date={date} setDate={setDate}/>} />
         <Route path='date/:date' element={<Datepage wins={wins} setWins={setWins}/>} />
-        <Route path='*' element={<NotFound />}/>
-        <Route path='error' element={<NotFound error={error}/>}/>
+        <Route path='*' element={<Error />}/>
+        <Route path='error' element={<Error error={error}/>}/>
       </Routes> 
     </div>
   );
