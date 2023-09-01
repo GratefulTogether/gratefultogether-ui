@@ -21,7 +21,7 @@ const Logo = styled.img `
 const Homepage = ({wins, setWins, date, setDate}) => {
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/wins')
+    fetch('https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins')
       .then(res => res.json())
       .then(data => setWins(data.data))
       .catch(err => console.log(err))

@@ -11,7 +11,7 @@ const App = () => {
   const [date, setDate] = useState(null)
 
   useEffect(() => {
-    const cable = createConsumer('ws://localhost:3000/cable');
+    const cable = createConsumer('wss://gratefultogether-api-49ea7cf50543.herokuapp.com/cable');
 
     const subscription = cable.subscriptions.create({
       channel: 'WinsChannel',
