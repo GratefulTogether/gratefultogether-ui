@@ -1,70 +1,42 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Grateful Together
+[![GratefulTogether](https://circleci.com/gh/GratefulTogether/gratefultogether-ui.svg?style=shield)](https://app.circleci.com/pipelines/github/GratefulTogether/gratefultogether-ui)
+### [View Deployed Site](https://gratefultogether.vercel.app/)
+### [View The Back-End Repo Here](https://github.com/GratefulTogether/gratefultogether-api)
 
-## Available Scripts
+## Abstract: 
+Greatful Together is a simple and intuitive tool designed to help you celebrate your daily victories and accomplishments. With this app, you can easily record and view your wins for each day, creating a positive and motivating record of your achievements over time. Whether it's a small personal triumph or a major milestone, this app encourages you to acknowledge and appreciate your daily wins.
 
-In the project directory, you can run:
+### Installation Instructions
+In order to clone this application:
+1. Fork this repo, and clone it down into your local machine using the SSH key
+2. After cloning it down, `cd` into the project and run `npm install`
+3. Once the installation is done, you can now run `npm start` to run the application in your web browser
+4. Install backend repository 
+### Preview of App:
 
-### `npm start`
+![Preview of Grateful Together](link)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Context:
+We are currently in Mod 4 of the Turing Frontend Development Program. A total of 40 hours were spent on this project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Contributors
 
-### `npm test`
+- Natalie Baker - [Github](https://github.com/Nathelene) | [LinkedIn](https://www.linkedin.com/in/natalie-baker-678323272/)
+- Victor Sriqui - [Github](https://github.com/vsriqui) | [LinkedIn](https://www.linkedin.com/in/victor-sriqui/)
+- Callihan Herman - [Github](https://github.com/CaliHam) | [LinkedIn](https://www.linkedin.com/in/callihan-herrmann/)
+- Caitlin Cradick - [Github](https://github.com/caitlincradick) | [LinkedIn](https://www.linkedin.com/in/caitlin-cradick-a91625246/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Learning Goals:
+- Demonstrate knowledge you’ve gained throughout Turing
+- Use an agile process to turn well defined requirements into deployed and production ready software
+- Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service oriented architecture concepts and patterns are highly encouraged.
+- Explore and implement new concepts, patterns, or libraries that have not been explicitly taught while at Turing
+- Practice an advanced, professional git workflow including a Pull Request Review
+- Gain experience using continuous integration tools to build and automate the deployment of features
+- Build applications that execute in development, test, CI, and production environments
+- Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
 
-### `npm run build`
+### Tech Stack
+- JavaScript, CSS/HTML, Cypress, Webpack, React, React Router, FETCH API's, Action Cable Websockets
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
