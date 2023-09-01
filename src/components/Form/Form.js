@@ -48,7 +48,7 @@ const Form = () => {
       if (!message) {
         setErrMessage(true)
       } else {
-      fetch('http://localhost:3000/api/v1/wins', {
+      fetch('https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins', {
         method: 'POST',
         body: JSON.stringify({user_id: 1, message}),
         headers: {
