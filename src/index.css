@@ -7,6 +7,10 @@ h1, h2 {
   font-weight: 300;
 }
 
+h3 {
+  margin: 5px;
+}
+
 body {
   margin: 0;
   font-family: 'Architects Daughter', 'Cedarville Cursive', 'Gaegu', 'Comforter Brush', 'Give You Glory',

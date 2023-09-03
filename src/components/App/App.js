@@ -5,43 +5,44 @@ import './App.css'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom'
 import { createConsumer } from '@rails/actioncable';
+import cardData from '../../cardMockData'
 
 const App = () => {
-  const [wins, setWins] = useState([])
+  const [wins, setWins] = useState(cardData)
   const [date, setDate] = useState(null)
   const [error, setError] = useState(false)
   const navigate = useNavigate([])
 
-  useEffect(() => {
-    const cable = createConsumer('wss://gratefultogether-api-49ea7cf50543.herokuapp.com/cable');
-    const subscription = 
-    cable.subscriptions.create({
-      channel: 'WinsChannel',
-    }, {
+  // useEffect(() => {
+  //   const cable = createConsumer('wss://gratefultogether-api-49ea7cf50543.herokuapp.com/cable');
+  //   const subscription = 
+  //   cable.subscriptions.create({
+  //     channel: 'WinsChannel',
+  //   }, {
       
-      connected: () => console.log('connected'),
-      disconnected: () => console.log('disconnected'),
-      received: (data) => setWins(wins => [...wins, data.data]),
+  //     connected: () => console.log('connected'),
+  //     disconnected: () => console.log('disconnected'),
+  //     received: (data) => setWins(wins => [...wins, data.data]),
 
-    });
+  //   });
 
 
-    cable.connection.events.error = function(e) { 
-      setError(true) 
-    }
+  //   cable.connection.events.error = function(e) { 
+  //     setError(true) 
+  //   }
 
-    return () => {
-      cable.disconnect();
-      subscription.unsubscribe();
-    };
+  //   return () => {
+  //     cable.disconnect();
+  //     subscription.unsubscribe();
+  //   };
  
-  },[])
+  // },[])
 
-  useEffect(() => {
-    if (error) {
-      navigate('/error');
-    } 
-  }, [navigate, error]);
+  // useEffect(() => {
+  //   if (error) {
+  //     navigate('/error');
+  //   } 
+  // }, [navigate, error]);
 
   return (
     <div className='App'>

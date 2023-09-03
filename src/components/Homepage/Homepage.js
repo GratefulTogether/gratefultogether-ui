@@ -20,18 +20,18 @@ const Logo = styled.img `
 
 const Homepage = ({wins, setWins, date, setDate, setError}) => {
 
-  useEffect(() => {
-    fetch('https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins')
-      .then(res => res.json())
-      .then(data => {
-        setError(false)
-        setWins(data.data)
-      })
-      .catch(err => {
-        setError(true)
-        console.log(err)
-      })
-    }, [setWins, setError])
+  // useEffect(() => {
+  //   fetch('https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setError(false)
+  //       setWins(data.data)
+  //     })
+  //     .catch(err => {
+  //       setError(true)
+  //       console.log(err)
+  //     })
+  //   }, [setWins, setError])
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
