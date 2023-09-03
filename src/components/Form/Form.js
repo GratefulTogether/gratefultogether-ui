@@ -6,32 +6,40 @@ import './Form.css'
 const TheForm = styled.form `
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 550px;
   align-self: center;
   border: 2px #00717F;
   border-style: groove;
   padding: 1%;
   box-shadow: 4px 4px 6px 2px  #00717F;
 `
-const TextInput = styled.input `
+const TextInput = styled.textarea `
   text-align: center;
   color: white;
   font-weight: bold;
   background-color: #00717F;
-
+  height: 80px;
+  width: 250px;
   &::placeholder {
-    opacity: 1;
+    opacity: .8;
     color: white;
   }
 `
 
 const Submit = styled.button`
-  background-color: #00A9BF;
+  background-color: #00717F;
   color: white;
-  transition: 1s;
-
+  transition: .7s;
+  height: fit-content;
+  align-self: center;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-family: 'Cormorant', serif;
+  font-size: 1em;
   &:hover {
-    background-color: #00717F;
+    color: #00717F;
+    background-color: #00A9BF;
   } 
 `
 
@@ -80,14 +88,14 @@ const Form = () => {
     }
 
   return (
-      <div className="form-container">
-    <TheForm>
-      {formattedDate}
-      <TextInput value={message} type='text' placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
-      <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
-    </TheForm>
+    <div className="form-container">
+      <TheForm>
+        {formattedDate}
+        <TextInput value={message} maxlength="100" placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
+        <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
+      </TheForm>
       {errMessage && <p>Please Fill Out Form</p>}
-      </div>
+    </div>
   )
 }
 

@@ -41,7 +41,8 @@ const TitleOfCard = styled.div`
   font-size: 1.4em;
   transition: 1s;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    cursor: default;
   }
 `;
 
@@ -54,7 +55,8 @@ const WinOfCard = styled.div`
   font-size: 1.3em;
   transition: 1s;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    cursor: default;
   }
 `;
 
