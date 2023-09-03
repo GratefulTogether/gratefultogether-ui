@@ -29,7 +29,7 @@ const Homepage = ({wins, setWins, date, setDate, setError}) => {
       })
       .catch(err => {
         setError(true)
-        console.log(err)
+        
       })
     }, [setWins, setError])
 
