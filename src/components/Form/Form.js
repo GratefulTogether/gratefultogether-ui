@@ -12,6 +12,13 @@ const TheForm = styled.form `
   border-style: groove;
   padding: 1%;
   box-shadow: 4px 4px 6px 2px  #00717F;
+  border-radius: 10px;
+  @media (max-width: 630px) {
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    align-items: center;
+  }
 `
 const TextInput = styled.textarea `
   text-align: center;
@@ -20,6 +27,7 @@ const TextInput = styled.textarea `
   background-color: #00717F;
   height: 80px;
   width: 250px;
+  max-width: 250px;
   &::placeholder {
     opacity: .8;
     color: white;
@@ -91,7 +99,7 @@ const Form = () => {
     <div className="form-container">
       <TheForm>
         {formattedDate}
-        <TextInput value={message} maxlength="100" placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
+        <TextInput value={message} maxlength="100" placeholder="Today, I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
         <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
       </TheForm>
       {errMessage && <p>Please Fill Out Form</p>}

@@ -5,7 +5,6 @@ import EntriesContainer from "../EntriesContainer/EntriesContainer"
 import Nav from "../NavBar/NavBar.js";
 import { useState, useEffect } from 'react';
 import CalendarModal from '../CalendarModal/CalendarModal.js';
-import './Homepage.css'
 
 const HomepageContainer = styled.div `
   display: flex;
@@ -16,6 +15,35 @@ const Logo = styled.img `
   height: auto;
   width: 450px;
   align-self: center;
+`
+
+const TodayInfo = styled.div `
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  align-self: center;
+  margin-top: 20px;
+  @media (max-width: 630px) {
+    width: 80%;
+  }
+`
+
+const ViewPastBtn = styled.button `
+  background-color: #00717F;
+  color: white;
+  transition: .7s;
+  height: fit-content;
+  align-self: center;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-family: 'Cormorant', serif;
+  font-size: 1em;
+  &:hover {
+    color: #00717F;
+    background-color: #00A9BF;
+  } 
 `
 
 const Homepage = ({wins, setWins, date, setDate, setError}) => {
@@ -55,11 +83,11 @@ const Homepage = ({wins, setWins, date, setDate, setError}) => {
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-      <div className='today-info'>
+      <TodayInfo>
         <h2>Today's Entries:</h2>
-          <button onClick={handleClick}>View Past Entry</button>
+          <ViewPastBtn onClick={handleClick}>View Past Entries</ViewPastBtn>
           {isModalOpen && renderModal()}
-      </div>
+      </TodayInfo>
       <EntriesContainer wins={wins}/>
     </HomepageContainer>
     </>
