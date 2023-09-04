@@ -1,4 +1,5 @@
 import './Datepage.css'
+import PropTypes from 'prop-types';
 import Homelogo from '../../images/Homelogo.png'
 import Nav from "../NavBar/NavBar.js";
 import EntriesContainer from '../EntriesContainer/EntriesContainer';
@@ -53,5 +54,12 @@ const Datepage = ({wins, setWins, setError}) => {
     </>
   )
 }
+
+Datepage.propTypes = {
+  wins: PropTypes.array,
+  setWins: PropTypes.func,
+  setError: PropTypes.func,
+};
+
 
 export default Datepage
