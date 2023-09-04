@@ -28,7 +28,7 @@ const EntriesContainer = ({wins}) => {
     return notecards[Math.floor(Math.random() * notecards.length)];
   };
 
-  const singleWin = wins.data.map(win => {
+  const singleWin = wins.map(win => {
     return (
       <CardContainer key={win.id}> 
         <Cards className={`${randomClass()}`} name={win.attributes.user_name} entry={win.attributes.entry} date={win.attributes.created_at}/>
@@ -39,7 +39,7 @@ const EntriesContainer = ({wins}) => {
   return (
     <TodayInfoContainer className='today-info-container'>
       <EContainer>
-        {!!wins.data.length ? singleWin : <p>Nothing recorded for this date!</p>} 
+        {!!wins.length ? singleWin : <p>Nothing recorded for this date!</p>} 
       </EContainer>
     </TodayInfoContainer>
   );

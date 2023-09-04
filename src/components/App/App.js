@@ -17,8 +17,6 @@ const App = () => {
   const [error, setError] = useState(false)
   const navigate = useNavigate([])
 
-  console.log(error)
-
   useEffect(() => {
     const cable = createConsumer('wss://gratefultogether-api-49ea7cf50543.herokuapp.com/cable');
     const subscription = 
