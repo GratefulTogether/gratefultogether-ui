@@ -102,7 +102,7 @@ describe('Main page elements and attributes.', () => {
           .should('eq', '100')
           cy.get('textarea')
           .should('have.attr', 'placeholder')
-          .should('eq', 'I\'m grateful for...')
+          .should('eq', 'Today, I\'m grateful for...')
           cy.get('textarea')
           .should('have.attr', 'value')
           .should('eq', '')
