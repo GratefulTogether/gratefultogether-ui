@@ -2,10 +2,8 @@ import Form from '../Form/Form.js'
 import logo from '../../images/GratefulTogetherLogo.png'
 import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
-import Nav from "../NavBar/NavBar.js";
 import { useState, useEffect } from 'react';
 import CalendarModal from '../CalendarModal/CalendarModal.js';
-import './Homepage.css'
 
 const HomepageContainer = styled.div `
   display: flex;
@@ -16,6 +14,34 @@ const Logo = styled.img `
   height: auto;
   width: 450px;
   align-self: center;
+`
+
+const TodayInfo = styled.div `
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  align-self: center;
+  margin-top: 20px;
+  @media (max-width: 630px) {
+    width: 80%;
+  }
+`
+
+const ViewPastBtn = styled.button `
+  font-family: 'Cormorant', serif;
+  border: 2px outset black;
+  background-color: transparent;
+  border-radius: 10px;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: #000000b0;
+    border: 2px inset #000000b0;
+  } 
 `
 
 const Homepage = ({wins, setWins, date, setDate, setError}) => {
@@ -51,15 +77,14 @@ const Homepage = ({wins, setWins, date, setDate, setError}) => {
 
   return (
     <>
-    <Nav />
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-      <div className='today-info'>
+      <TodayInfo className='today-info'>
         <h2>Today's Entries:</h2>
-          <button onClick={handleClick}>View Past Entry</button>
+          <ViewPastBtn onClick={handleClick}>View Past Entries</ViewPastBtn>
           {isModalOpen && renderModal()}
-      </div>
+      </TodayInfo>
       <EntriesContainer wins={wins}/>
     </HomepageContainer>
     </>

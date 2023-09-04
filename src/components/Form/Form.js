@@ -1,37 +1,62 @@
 import dayjs from 'dayjs'
 import styled from 'styled-components';
 import { useState } from 'react';
-import './Form.css'
+
+const FormContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 670px) {
+    flex-direction: column;
+  }
+`
 
 const TheForm = styled.form `
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 550px;
   align-self: center;
   border: 2px #00717F;
   border-style: groove;
   padding: 1%;
   box-shadow: 4px 4px 6px 2px  #00717F;
+  border-radius: 10px;
+  @media (max-width: 630px) {
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    align-items: center;
+  }
 `
-const TextInput = styled.input `
+const TextInput = styled.textarea `
   text-align: center;
   color: white;
   font-weight: bold;
   background-color: #00717F;
-
+  height: 80px;
+  width: 250px;
+  max-width: 250px;
+  border-radius: 7px;
   &::placeholder {
-    opacity: 1;
+    opacity: .8;
     color: white;
   }
 `
 
 const Submit = styled.button`
-  background-color: #00A9BF;
+  background-color: #00717F;
   color: white;
-  transition: 1s;
-
+  transition: .7s;
+  height: fit-content;
+  align-self: center;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Cormorant', serif;
+  font-size: 1em;
   &:hover {
-    background-color: #00717F;
+    color: #000000;
+    background-color: #00A9BF;
   } 
 `
 
@@ -80,14 +105,14 @@ const Form = () => {
     }
 
   return (
-      <div className="form-container">
-    <TheForm>
-      {formattedDate}
-      <TextInput value={message} type='text' placeholder="I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
-      <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
-    </TheForm>
+    <FormContainer className="form-container">
+      <TheForm>
+        {formattedDate}
+        <TextInput value={message} maxlength="100" placeholder="Today, I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
+        <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
+      </TheForm>
       {errMessage && <p>Please Fill Out Form</p>}
-      </div>
+    </FormContainer>
   )
 }
 

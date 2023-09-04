@@ -1,13 +1,18 @@
 import Homepage from '../Homepage/Homepage'
 import Datepage from '../Datepage/Datepage'
 import Error from '../Error/Error'
-import './App.css'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom'
 import { createConsumer } from '@rails/actioncable';
+import cardData from '../../cardMockData'
+import { styled } from 'styled-components';
+
+const AppStyle = styled.div `
+  display: flex;
+  flex-direction: column;`
 
 const App = () => {
-  const [wins, setWins] = useState([])
+  const [wins, setWins] = useState(cardData)
   const [date, setDate] = useState(null)
   const [error, setError] = useState(false)
   const navigate = useNavigate([])
@@ -44,14 +49,14 @@ const App = () => {
   }, [navigate, error]);
 
   return (
-    <div className='App'>
+    <AppStyle className='App'>
       <Routes>
         <Route exact path='/' element={<Homepage wins={wins} setWins={setWins} date={date} setDate={setDate} setError={setError}/>} />
         <Route path='date/:date' element={<Datepage wins={wins} setWins={setWins} setError={setError}/>} />
         <Route path='*' element={<Error />}/>
         <Route path='error' element={<Error error={error}/>}/>
       </Routes> 
-    </div>
+    </AppStyle>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import Cards from '../Cards/Cards'
 import styled from 'styled-components';
-import './EntriesContainer.css'
 
 const CardContainer = styled.div`
   display: flex;
@@ -15,6 +14,12 @@ const EContainer = styled.div`
   flex-direction: column-reverse;
 `;
 
+const TodayInfoContainer = styled.div `
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const EntriesContainer = ({wins}) => {
   const notecards = ['green', 'lightGreen', 'purple', 'tanCircle', 'tanSquare', 'yellow', 'yellowSq'];
 
@@ -22,7 +27,7 @@ const EntriesContainer = ({wins}) => {
     return notecards[Math.floor(Math.random() * notecards.length)];
   };
 
-  const singleWin = wins.map(win => {
+  const singleWin = wins.data.map(win => {
     return (
       <CardContainer key={win.id}> 
         <Cards className={`${randomClass()}`} name={win.attributes.user_name} entry={win.attributes.entry} date={win.attributes.created_at}/>
@@ -31,11 +36,11 @@ const EntriesContainer = ({wins}) => {
   });
 
   return (
-    <div className='today-info-container'>
+    <TodayInfoContainer className='today-info-container'>
       <EContainer>
-        {!!wins.length ? singleWin : <p>Nothing recorded for this date!</p>} 
+        {!!wins.data.length ? singleWin : <p>Nothing recorded for this date!</p>} 
       </EContainer>
-    </div>
+    </TodayInfoContainer>
   );
 }
 

@@ -20,34 +20,38 @@ const imageMapping = {
 };
 
 const Card = styled.div`
-  
   padding: 10px;  
-  height: 30vh;
-  width: 26vw;
-  transition: 1s;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 1s;
-  &:hover {
-    transform: scale(1.4);
-    margin: 5.5%
-  }
+  height: 450px;
+  width: 450px;
+  transition: .7s;
   background: url(${props => imageMapping[props.className] || 'default?'})
 `;
 
 const TitleOfCard = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10% 0% 0% 10%;
-  font-family: 'Indie Flower', cursive;
+  margin: 15% 0% 0% 10%;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.4em;
+  transition: 1s;
+  &:hover {
+    transform: scale(1.1);
+    cursor: default;
+  }
 `;
 
 const WinOfCard = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
+  margin-top: 8%;
+  font-size: 1.3em;
+  transition: 1s;
+  &:hover {
+    transform: scale(1.2);
+    cursor: default;
+  }
 `;
 
 const Cards = ({name, entry, date, className}) => {

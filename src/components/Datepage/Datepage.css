@@ -1,12 +1,4 @@
-
-
 NavLink {
   height:10%;
   width: 10%;
-}
-
-.date-page-container {
-  display:flex; 
-  flex-direction: column;
-  align-items: center;
 }
