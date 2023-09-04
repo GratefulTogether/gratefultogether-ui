@@ -61,5 +61,4 @@ Datepage.propTypes = {
   setError: PropTypes.func,
 };
 
-
 export default Datepage
