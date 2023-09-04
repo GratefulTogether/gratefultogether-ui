@@ -12,7 +12,7 @@ const AppStyle = styled.div `
   flex-direction: column;`
 
 const App = () => {
-  const [wins, setWins] = useState({})
+  const [wins, setWins] = useState([])
   const [date, setDate] = useState(null)
   const [error, setError] = useState(false)
   const navigate = useNavigate([])
