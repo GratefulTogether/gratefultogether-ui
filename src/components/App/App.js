@@ -4,7 +4,6 @@ import Error from '../Error/Error'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom'
 import { createConsumer } from '@rails/actioncable';
-import cardData from '../../cardMockData'
 import { styled } from 'styled-components';
 
 const AppStyle = styled.div `
@@ -12,12 +11,10 @@ const AppStyle = styled.div `
   flex-direction: column;`
 
 const App = () => {
-  const [wins, setWins] = useState(cardData)
+  const [wins, setWins] = useState([])
   const [date, setDate] = useState(null)
   const [error, setError] = useState(false)
   const navigate = useNavigate([])
-
-  console.log(error)
 
   useEffect(() => {
     const cable = createConsumer('wss://gratefultogether-api-49ea7cf50543.herokuapp.com/cable');
