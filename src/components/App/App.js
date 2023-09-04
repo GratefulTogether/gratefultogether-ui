@@ -4,7 +4,6 @@ import Error from '../Error/Error'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom'
 import { createConsumer } from '@rails/actioncable';
-import cardData from '../../cardMockData'
 import { styled } from 'styled-components';
 
 const AppStyle = styled.div `
