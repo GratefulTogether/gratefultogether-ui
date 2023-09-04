@@ -30,19 +30,18 @@ const TodayInfo = styled.div `
 `
 
 const ViewPastBtn = styled.button `
-  background-color: #00717F;
-  color: white;
-  transition: .7s;
-  height: fit-content;
-  align-self: center;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
   font-family: 'Cormorant', serif;
-  font-size: 1em;
+  border: 2px outset black;
+  background-color: transparent;
+  border-radius: 10px;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
   &:hover {
-    color: #00717F;
-    background-color: #00A9BF;
+    color: #000000b0;
+    border: 2px inset #000000b0;
   } 
 `
 

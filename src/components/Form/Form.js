@@ -28,6 +28,7 @@ const TextInput = styled.textarea `
   height: 80px;
   width: 250px;
   max-width: 250px;
+  border-radius: 7px;
   &::placeholder {
     opacity: .8;
     color: white;
@@ -41,12 +42,12 @@ const Submit = styled.button`
   height: fit-content;
   align-self: center;
   border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
   font-family: 'Cormorant', serif;
   font-size: 1em;
   &:hover {
-    color: #00717F;
+    color: #000000;
     background-color: #00A9BF;
   } 
 `

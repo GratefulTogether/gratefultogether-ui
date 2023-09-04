@@ -24,16 +24,7 @@ const Card = styled.div`
   height: 450px;
   width: 450px;
   transition: .7s;
-  &:hover {
-    transform: scale(1.1);
-    margin: 5%;
-    width: 500px;
-  }
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   background: url(${props => imageMapping[props.className] || 'default?'})
-  
 `;
 
 const TitleOfCard = styled.div`
@@ -43,10 +34,10 @@ const TitleOfCard = styled.div`
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.4em;
   transition: 1s;
-  // &:hover {
-  //   transform: scale(1.1);
-  //   cursor: default;
-  // }
+  &:hover {
+    transform: scale(1.1);
+    cursor: default;
+  }
 `;
 
 const WinOfCard = styled.div`
@@ -57,10 +48,10 @@ const WinOfCard = styled.div`
   margin-top: 8%;
   font-size: 1.3em;
   transition: 1s;
-  // &:hover {
-  //   transform: scale(1.1);
-  //   cursor: default;
-  // }
+  &:hover {
+    transform: scale(1.2);
+    cursor: default;
+  }
 `;
 
 const Cards = ({name, entry, date, className}) => {

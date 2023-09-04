@@ -13,17 +13,17 @@ const Error = ({error}) => {
     align-items: center;
     padding: 10px;
     button {
-      background-color: #00717F;
-      color: white;
-      transition: .7s;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 20px;
       font-family: 'Cormorant', serif;
-      font-size: 1em;
+      background-color: #f6ebee;
+      border: 2px solid #30a2af;
+      border-radius: 5px;
+      color: #0e0609;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
       &:hover {
-        color: #000000;
-        background-color: #00A9BF;
+        background-color: #f6acc7;
       } 
     }
   `
