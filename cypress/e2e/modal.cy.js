@@ -107,4 +107,44 @@ describe('Should test modal elements and functionality', () => {
     })
 
   })
+  it('Should be able to close modal and remove from the dom.', () => {
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+    cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+
+    cy.get('.App')
+    .within(()=>{
+      cy.get('div')
+      .eq(0)
+      .within(()=>{
+        cy.get('.today-info')
+        .within(()=>{
+          cy.get('button')
+          .click()
+        })
+        cy.get('.modal-container')
+        .within(()=>{
+          cy.get('.modal')
+          .within(()=>{
+            cy.get('.modal-content')
+            .within(()=>{
+              cy.get('button')
+              .first()
+              .click()
+            })
+          })
+        })
+      })
+    })
+    cy.get('.modal-container')
+    .should('not.exist')
+  })
 })
