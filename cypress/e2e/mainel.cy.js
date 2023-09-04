@@ -29,7 +29,7 @@ describe('Main page elements and attributes.', () => {
           }
       },
       {
-        "id": 2,
+        "id": 3,
         "type": "win", 
         "attributes": {
             "user_name": "Circe",
