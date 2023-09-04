@@ -38,7 +38,7 @@ const Error = ({error}) => {
       <Link to={`/`}>
         {!error && <button>Home</button>}
       </Link>
-      {error && <NotFound src={fivehundred} className='not-found' alt='404 page not found' />}
+      {error && <NotFound className='not-found' src={fivehundred} alt='404 page not found' />}
       {!error && <NotFound src={pagenotfound} className='not-found' alt='404 page not found' />}
     </ErrorContainer>
   )

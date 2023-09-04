@@ -105,7 +105,7 @@ const Form = () => {
     }
 
   return (
-    <FormContainer>
+    <FormContainer className="form-container">
       <TheForm>
         {formattedDate}
         <TextInput value={message} maxlength="100" placeholder="Today, I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>

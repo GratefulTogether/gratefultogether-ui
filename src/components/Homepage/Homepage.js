@@ -80,7 +80,7 @@ const Homepage = ({wins, setWins, date, setDate, setError}) => {
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />
-      <TodayInfo>
+      <TodayInfo className='today-info'>
         <h2>Today's Entries:</h2>
           <ViewPastBtn onClick={handleClick}>View Past Entries</ViewPastBtn>
           {isModalOpen && renderModal()}

@@ -36,7 +36,7 @@ const EntriesContainer = ({wins}) => {
   });
 
   return (
-    <TodayInfoContainer>
+    <TodayInfoContainer className='today-info-container'>
       <EContainer>
         {!!wins.data.length ? singleWin : <p>Nothing recorded for this date!</p>} 
       </EContainer>

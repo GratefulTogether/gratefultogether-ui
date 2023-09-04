@@ -49,7 +49,7 @@ const App = () => {
   }, [navigate, error]);
 
   return (
-    <AppStyle>
+    <AppStyle className='App'>
       <Routes>
         <Route exact path='/' element={<Homepage wins={wins} setWins={setWins} date={date} setDate={setDate} setError={setError}/>} />
         <Route path='date/:date' element={<Datepage wins={wins} setWins={setWins} setError={setError}/>} />

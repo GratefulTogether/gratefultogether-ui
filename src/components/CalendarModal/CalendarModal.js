@@ -66,10 +66,10 @@ const CalendarModal = ({ closeModal }) => {
   const [date, setDate] = useState('')
 
   return (
-    <ModalContainer>
-      <Modal>
-        <ModalContent>
-          <ModalClose onClick={closeModal}><img src={close} alt='close'/></ModalClose>
+    <ModalContainer className='modal-container'>
+      <Modal className="modal">
+        <ModalContent className="modal-content">
+          <ModalClose className="modal-close" onClick={closeModal}><img src={close} alt='close'/></ModalClose>
           <h3>Select your date: </h3>
           <DateInput type='date' className='date' onChange={e => setDate(e.target.value)} max={today}/>
           <Link to={`date/${date}`}>

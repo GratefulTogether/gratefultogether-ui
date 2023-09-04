@@ -47,7 +47,7 @@ const Datepage = ({wins, setWins, setError}) => {
 
   return (
     <>
-      <DatePageContainer>
+      <DatePageContainer className='date-page-container'>
         <NavLink to = "/">
           <img className='home-logo' src={Homelogo} alt="home logo" />
         </NavLink>
