@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import fivehundred from '../../images/fivehundred.svg'
 import pagenotfound from '../../images/404.svg'
@@ -18,5 +19,9 @@ const Error = ({error}) => {
     </>
   )
 }
+
+Error.propTypes = {
+  error: PropTypes.bool,
+};
 
 export default Error
