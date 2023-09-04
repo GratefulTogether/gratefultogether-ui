@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import green from '../../images/notecards/green.png';
 import lightGreen from '../../images/notecards/light-green.png';
@@ -68,5 +69,13 @@ const Cards = ({name, entry, date, className}) => {
     </Card>
   )
 }
+
+Cards.propTypes = {
+  name: PropTypes.string,
+  entry: PropTypes.string,
+  date: PropTypes.string,
+  className: PropTypes.string,
+};
+
 
 export default Cards
