@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Cards from '../Cards/Cards'
 import styled from 'styled-components';
 import './EntriesContainer.css'
@@ -38,5 +39,9 @@ const EntriesContainer = ({wins}) => {
     </div>
   );
 }
+
+EntriesContainer.propTypes = {
+  wins: PropTypes.array,
+};
 
 export default EntriesContainer
