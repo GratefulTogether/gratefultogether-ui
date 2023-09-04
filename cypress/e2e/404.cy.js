@@ -86,4 +86,44 @@ describe('404 page have expected user experience.', () => {
       })
     })
   })
+
+  it('Should be able to return home after being sent to 404 page.', () => {
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+    cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+
+    cy.visit("http://localhost:3000/gibberish", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/gibberish')
+
+    cy.get('#root')
+    .within(()=>{
+      cy.get('.App')
+      .within(()=>{
+        cy.get('a')
+        .within(()=>{
+          cy.get('button')
+          .click()
+        })
+
+      })
+    })
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+  })
 })
