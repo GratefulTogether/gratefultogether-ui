@@ -31,7 +31,7 @@ describe('template spec', () => {
     }).as('initialGet')
   })
 
-  it('passes', () => {
+  it('Should load logo on front page properly.', () => {
 
     
     cy.visit("http://localhost:3000/", {
@@ -42,5 +42,23 @@ describe('template spec', () => {
       }
     })
     cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+
+    cy.get('.App')
+    .within(()=>{
+      cy.get('div')
+      .eq(0)
+      .within(()=>{
+        cy.get('img')
+        .should('have.attr', 'alt')
+        .should('eq', 'Grateful Together Logo')
+        cy.get('img')
+        .should('have.attr', 'src')
+        .should('eq', '/static/media/GratefulTogetherLogo.3db29a133774eb0a3e4b.png')
+        
+      })
+    })
   })
 })
