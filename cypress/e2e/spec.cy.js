@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 
 const today = dayjs().format('YYYY-MM-DD')
+const todayStyled = dayjs().format('MMMM D, YYYY')
 
 describe('template spec', () => {
 
@@ -26,7 +27,16 @@ describe('template spec', () => {
               "entry": "love my cats",
               "created_at": today
           }
-      } 
+      },
+      {
+        "id": 2,
+        "type": "win", 
+        "attributes": {
+            "user_name": "Circe",
+            "entry": "Ate some cookies",
+            "created_at": today
+        }
+      }  
       ]}
     }).as('initialGet')
   })
@@ -52,6 +62,7 @@ describe('template spec', () => {
       .eq(0)
       .within(()=>{
         cy.get('img')
+        .should('be.visible')
         .should('have.attr', 'alt')
         .should('eq', 'Grateful Together Logo')
         cy.get('img')
@@ -61,4 +72,50 @@ describe('template spec', () => {
       })
     })
   })
+
+  it('Should mount with form, should have correct elements, and with correct attributes.', () => {
+
+    
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+    cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+
+    cy.get('.App')
+    .within(()=>{
+      cy.get('div')
+      .eq(0)
+      .within(()=>{
+        cy.get('.form-container')
+        .contains(`${todayStyled}`)
+        cy.get('.form-container')
+        .within(()=>{
+          cy.get('input')
+          .should('be.visible')
+          .should('have.attr', 'type')
+          .should('eq', 'text')
+          cy.get('input')
+          .should('have.attr', 'placeholder')
+          .should('eq', 'I\'m grateful for...')
+          cy.get('input')
+          .should('have.attr', 'value')
+          .should('eq', '')
+          cy.get('button')
+          .should('have.text', 'Submit')
+          cy.get('button')
+          .should('have.attr', 'type')
+          .should('eq', 'submit')
+        })
+        
+      })
+    })
+  })
+
 })
