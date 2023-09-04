@@ -36,9 +36,17 @@ cy.intercept("GET", 'https://gratefultogether-api-49ea7cf50543.herokuapp.com/api
   }  
   ]}
 }).as('initialGet')
+
+cy.intercept("GET", 'https://gratefultogether-api-49ea7cf50543.herokuapp.com/api/v1/wins?date=2023-09-01', {
+  statusCode: 200,
+  body: {data:[
+
+  ]}
+}).as('getDate')
+
 })
 
-describe('Should test modal elements and functionality', () => {
+describe('Should test modal elements, functionality, routing.', () => {
   it('Modal should have all proper elements.', () => {
     cy.visit("http://localhost:3000/", {
       onBeforeLoad(win) {
@@ -86,7 +94,7 @@ describe('Should test modal elements and functionality', () => {
               .should('eq', 'date')
               cy.get('input')
               .should('have.attr', 'max')
-              .should('eq', '2023-09-03')
+              .should('eq', `${today}`)
               cy.get('a')
               .should('have.attr', 'href')
               .should('eq', '/date/')
@@ -146,5 +154,58 @@ describe('Should test modal elements and functionality', () => {
     })
     cy.get('.modal-container')
     .should('not.exist')
+  })
+
+  it('Should be able to select a date, click submit, and be carried to the by past date page.', () => {
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+    cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+
+    cy.get('.App')
+    .within(()=>{
+      cy.get('div')
+      .eq(0)
+      .within(()=>{
+        cy.get('.today-info')
+        .within(()=>{
+          cy.get('button')
+          .click()
+        })
+        cy.get('.modal-container')
+        .within(()=>{
+          cy.get('.modal')
+          .within(()=>{
+            
+            cy.get('.modal-content')
+            .within(()=>{
+              cy.get('.date')
+              .type('2023-09-01', { force: true })
+              cy.get('a')
+              .should('have.attr', 'href')
+              .should('eq', '/date/2023-09-01')
+              cy.get('a')
+              .within(()=>{
+                cy.get('button')
+                .should('not.have.attr', 'disabled')
+                cy.get('button')
+                .click()
+                cy.wait('@getDate')
+                cy.url()
+                .should('eq', 'http://localhost:3000/date/2023-09-01')
+              })
+            })
+          })
+        })
+      })
+    })
+
   })
 })
