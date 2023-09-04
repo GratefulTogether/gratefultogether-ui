@@ -1,7 +1,15 @@
 import dayjs from 'dayjs'
 import styled from 'styled-components';
 import { useState } from 'react';
-import './Form.css'
+
+const FormContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 670px) {
+    flex-direction: column;
+  }
+`
 
 const TheForm = styled.form `
   display: flex;
@@ -97,14 +105,14 @@ const Form = () => {
     }
 
   return (
-    <div className="form-container">
+    <FormContainer>
       <TheForm>
         {formattedDate}
         <TextInput value={message} maxlength="100" placeholder="Today, I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
         <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
       </TheForm>
       {errMessage && <p>Please Fill Out Form</p>}
-    </div>
+    </FormContainer>
   )
 }
 

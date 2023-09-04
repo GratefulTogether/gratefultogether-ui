@@ -2,7 +2,6 @@ import Form from '../Form/Form.js'
 import logo from '../../images/GratefulTogetherLogo.png'
 import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
-import Nav from "../NavBar/NavBar.js";
 import { useState, useEffect } from 'react';
 import CalendarModal from '../CalendarModal/CalendarModal.js';
 
@@ -78,7 +77,6 @@ const Homepage = ({wins, setWins, date, setDate, setError}) => {
 
   return (
     <>
-    <Nav />
     <HomepageContainer>
       <Logo src={logo} alt='Grateful Together Logo' className='logo'></Logo>
       <Form />

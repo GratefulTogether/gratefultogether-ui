@@ -1,7 +1,6 @@
 import React from 'react'
 import Cards from '../Cards/Cards'
 import styled from 'styled-components';
-import './EntriesContainer.css'
 
 const CardContainer = styled.div`
   display: flex;
@@ -13,6 +12,12 @@ const CardContainer = styled.div`
 const EContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
+`;
+
+const TodayInfoContainer = styled.div `
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const EntriesContainer = ({wins}) => {
@@ -31,11 +36,11 @@ const EntriesContainer = ({wins}) => {
   });
 
   return (
-    <div className='today-info-container'>
+    <TodayInfoContainer>
       <EContainer>
         {!!wins.data.length ? singleWin : <p>Nothing recorded for this date!</p>} 
       </EContainer>
-    </div>
+    </TodayInfoContainer>
   );
 }
 
