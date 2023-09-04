@@ -1,5 +1,6 @@
 import close from '../../images/close.png'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import dayjs from 'dayjs'
 import styled from 'styled-components';
@@ -79,6 +80,10 @@ const CalendarModal = ({ closeModal }) => {
       </Modal>
     </ModalContainer>
   );
+};
+
+CalendarModal.propTypes = {
+  closeModal: PropTypes.func,
 };
 
 export default CalendarModal;

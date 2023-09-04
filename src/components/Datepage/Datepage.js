@@ -1,4 +1,5 @@
 import './Datepage.css'
+import PropTypes from 'prop-types';
 import Homelogo from '../../images/Homelogo.png'
 import EntriesContainer from '../EntriesContainer/EntriesContainer';
 import dayjs from 'dayjs'
@@ -57,5 +58,11 @@ const Datepage = ({wins, setWins, setError}) => {
     </>
   )
 }
+
+Datepage.propTypes = {
+  wins: PropTypes.array,
+  setWins: PropTypes.func,
+  setError: PropTypes.func,
+};
 
 export default Datepage

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Cards from '../Cards/Cards'
 import styled from 'styled-components';
 
@@ -43,5 +44,9 @@ const EntriesContainer = ({wins}) => {
     </TodayInfoContainer>
   );
 }
+
+EntriesContainer.propTypes = {
+  wins: PropTypes.array,
+};
 
 export default EntriesContainer

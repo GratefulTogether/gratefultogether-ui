@@ -1,4 +1,5 @@
 import Form from '../Form/Form.js'
+import PropTypes from 'prop-types';
 import logo from '../../images/GratefulTogetherLogo.png'
 import styled from 'styled-components';
 import EntriesContainer from "../EntriesContainer/EntriesContainer"
@@ -90,5 +91,13 @@ const Homepage = ({wins, setWins, date, setDate, setError}) => {
     </>
   )
 } 
+
+Homepage.propTypes = {
+  wins: PropTypes.array,
+  setWins: PropTypes.func,
+  date: PropTypes.string,
+  setDate: PropTypes.func,
+  setError: PropTypes.func,
+};
 
 export default Homepage
