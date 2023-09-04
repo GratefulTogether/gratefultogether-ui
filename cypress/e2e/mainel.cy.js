@@ -184,7 +184,7 @@ describe('Main page elements and attributes.', () => {
                 .within(()=>{
                   cy.get('h3')
                   .eq(0)
-                  .should('have.text', 'Date: September 3, 2023 ')
+                  .should('have.text', `Date: ${todayStyled} `)
                   cy.get('h3')
                   .eq(1)
                   .should('have.text', 'Name: Neato ')
@@ -204,7 +204,7 @@ describe('Main page elements and attributes.', () => {
               .within(()=>{
                 cy.get('h3')
                 .first()
-                .should('have.text', 'Date: September 3, 2023 ')
+                .should('have.text', `Date: ${todayStyled} `)
                 cy.get('h3')
                 .last()
                 .should('have.text', 'Name: Circe ')
@@ -223,3 +223,6 @@ describe('Main page elements and attributes.', () => {
   })
 
 })
+
+
+//length
