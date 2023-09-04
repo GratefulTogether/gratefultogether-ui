@@ -75,7 +75,7 @@ describe('404 page have expected user experience.', () => {
         cy.get('a')
         .within(()=>{
           cy.get('button')
-          .should('have.text', ' Go home. ')
+          .should('have.text', 'Home')
         })
         cy.get('.not-found')
         .should('have.attr', 'src')

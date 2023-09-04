@@ -84,7 +84,7 @@ describe('Should test modal elements, functionality, routing.', () => {
                 .should('eq', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3gAAAN4B3eqDagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFESURBVFiFzZcxbsMwDEWfvRg+QY0MvkHQO3TNnTL7BIEnLzlD1mxF5u7dsrR74I7MEApoDFei47iSAE4i9T9JiSIzEcGysiwrgTdgA7wCL0Cl21/AN/ABHICjiPyYDhYRrwAroAV6QIzSq80qeL4HuACaicBjRBqgmERAQ3uaATyUE1CZCABr4PxEcCdnYO0loJ4vAf6bRDVKQHP+zLD70lGMEWj+AdxJc0eA21Obc9unSo8+UUegDRhsgRrYGw7fq+42oNe6IlgavK9VOQc6j14H5KpbG6JQwq20WrzKAyS6gY4lWhuAnTFvQ4DOuOeTHcC7UfkvoEfBRbH5nGAwRuJRcFFsLhON7kjMABfgkpPAip6C6Jcw+jOMXojiluLon1ES33H0hiSJlix6U5pEW57EYJLEaDYgsuhwmrnONLSWGs+v52h1OfWcVoQAAAAASUVORK5CYII=')
                 cy.get('img')
                 .should('have.attr', 'alt')
-                .should('eq', 'close modal')
+                .should('eq', 'close')
 
               })
               cy.get('h3')
