@@ -5,17 +5,17 @@
 ### [View The Back-End Repo Here](https://github.com/GratefulTogether/gratefultogether-api)
 
 ## Abstract: 
-Greatful Together is a simple and intuitive tool designed to help you celebrate your daily victories and accomplishments. With this app, you can easily record and view your wins for each day, creating a positive and motivating record of your achievements over time. Whether it's a small personal triumph or a major milestone, this app encourages you to acknowledge and appreciate your daily wins.
+Grateful Together is a simple and intuitive tool designed to help you celebrate your daily victories and accomplishments. With this app, you can easily record and view your wins for each day, creating a positive and motivating record of your achievements over time. Whether it's a small personal triumph or a major milestone, this app encourages you to acknowledge and appreciate your daily wins.
 
 ### Installation Instructions
 In order to clone this application:
 1. Fork this repo, and clone it down into your local machine using the SSH key
 2. After cloning it down, `cd` into the project and run `npm install`
 3. Once the installation is done, you can now run `npm start` to run the application in your web browser
-4. Install backend repository 
+4. Install the backend repository 
 ### Preview of App:
 
-![Preview of Grateful Together](link)
+![Preview of Grateful Together](https://github.com/GratefulTogether/gratefultogether-ui/assets/126219151/b07e3a24-7315-42b4-9671-4c21e310149a)
 
 ### Context:
 We are currently in Mod 4 of the Turing Frontend Development Program. A total of 40 hours were spent on this project.
@@ -29,8 +29,8 @@ We are currently in Mod 4 of the Turing Frontend Development Program. A total of
 
 ### Learning Goals:
 - Demonstrate knowledge you’ve gained throughout Turing
-- Use an agile process to turn well defined requirements into deployed and production ready software
-- Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service oriented architecture concepts and patterns are highly encouraged.
+- Use an agile process to turn well-defined requirements into deployed and production-ready software
+- Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service-oriented architecture concepts and patterns are highly encouraged.
 - Explore and implement new concepts, patterns, or libraries that have not been explicitly taught while at Turing
 - Practice an advanced, professional git workflow including a Pull Request Review
 - Gain experience using continuous integration tools to build and automate the deployment of features
