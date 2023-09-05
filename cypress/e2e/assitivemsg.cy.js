@@ -78,7 +78,7 @@ describe('User should get helpful messages when applicable.', () => {
       })
   })
 
-  it('Should mount with form, should have correct elements, and with correct attributes.', () => {
+  it('Form should give user friendly msg to fill out form when clicking submit.', () => {
 
     
     cy.visit("http://localhost:3000/", {
