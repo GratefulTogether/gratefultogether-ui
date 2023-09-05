@@ -28,7 +28,10 @@ const TheForm = styled.form `
     align-items: center;
   }
 `
-const TextInput = styled.textarea `
+const TextInput = styled.input.attrs(({value}) => ({
+ value,
+type: "text"
+}))`
   text-align: center;
   color: white;
   font-weight: bold;
@@ -89,7 +92,7 @@ const Form = () => {
         if (res.ok) {
           return res
         } else {
-          throw new Error('ERRORROROROR')
+          throw new Error('error')
         }
       })
       .then(res => {
@@ -108,7 +111,7 @@ const Form = () => {
     <FormContainer className="form-container">
       <TheForm>
         {formattedDate}
-        <TextInput value={message} maxlength="100" placeholder="Today, I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
+        <TextInput value={message} maxLength="100" placeholder="Today, I'm grateful for..." onChange={e => updateMessage(e)}></TextInput>
         <Submit type='submit' onClick={e => handleSubmit(e)}>Submit</Submit>
       </TheForm>
       {errMessage && <p>Please Fill Out Form</p>}
