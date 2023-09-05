@@ -120,4 +120,56 @@ describe('Should test modal elements, functionality, routing.', () => {
       })
     })
   })
+
+  it('Should be able to navigate to date page and navigate back home.', () => {
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+    cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+    cy.get('.App')
+    .within(()=>{
+      cy.get('div')
+      .eq(0)
+      .within(()=>{
+        cy.get('.today-info')
+        .within(()=>{
+          cy.get('button')
+          .click()
+        })
+        cy.get('.modal-container')
+        .within(()=>{
+          cy.get('.modal')
+          .within(()=>{
+            cy.get('.modal-content')
+            .within(()=>{
+              cy.get('.date')
+              .type('2023-09-01', { force: true })
+              cy.get('a')
+              .within(()=>{
+                cy.get('button')
+                .click()
+                cy.wait('@getDate')
+                cy.url()
+                .should('eq', 'http://localhost:3000/date/2023-09-01')
+              })
+            })
+          })
+        }) 
+      })
+      cy.get('.date-page-container')
+      .within(()=>{
+        cy.get('a')
+        .click()
+      })
+      cy.url()
+      .should('eq', 'http://localhost:3000/')
+    })
+  })
 })
