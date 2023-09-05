@@ -1,5 +1,5 @@
 
-describe('500 level errors should route to proper error page.', () => {
+describe('500 level errors on main should route home.', () => {
 
 
   it('Failure of initial get of today\'s data should route to error page, and have proper elements and attributes.', () => {
