@@ -170,6 +170,10 @@ describe('Main page elements and attributes.', () => {
       .within(()=>{
         cy.get('.today-info-container')
         .within(()=>{
+          cy.get('p')
+          .should('have.length', 3)
+          cy.get('h3')
+          .should('have.length', 6)
           cy.get('div')
           .first()
           .within(()=>{
@@ -222,6 +226,3 @@ describe('Main page elements and attributes.', () => {
   })
 
 })
-
-
-//length
