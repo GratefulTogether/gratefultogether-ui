@@ -1,0 +1,29 @@
+{"data":[
+  {
+    "id": 1,
+    "type": "win", 
+    "attributes": {
+        "user_name": "Neato",
+        "entry": "slept well",
+        "created_at": "2023-09-01"
+    }
+  }, 
+  {
+    "id": 2,
+    "type": "win", 
+    "attributes": {
+        "user_name": "Circe",
+        "entry": "love my cats",
+        "created_at": "2023-09-01"
+    }
+},
+{
+  "id": 3,
+  "type": "win", 
+  "attributes": {
+      "user_name": "Circe",
+      "entry": "Ate some cookies",
+      "created_at": "2023-09-01"
+  }
+}  
+]}

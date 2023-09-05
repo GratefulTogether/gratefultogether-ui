@@ -77,4 +77,36 @@ describe('User should get helpful messages when applicable.', () => {
         .should('have.text', 'Nothing recorded for this date!')
       })
   })
+
+  it('Form should give user friendly msg to fill out form when clicking submit.', () => {
+
+    
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(win) {
+
+      cy.stub(win, "WebSocket")
+
+      }
+    })
+    cy.wait('@initialGet')
+
+    cy.url()
+    .should('eq', 'http://localhost:3000/')
+
+    cy.get('.App')
+    .within(()=>{
+      cy.get('div')
+      .eq(0)
+      .within(()=>{
+        cy.get('.form-container')
+        .within(()=>{
+          cy.get('p')
+          .should('not.exist')
+          cy.get('button')
+          .click()
+        })
+        .contains('Please Fill Out Form')
+      })
+    })
+  })
 })
